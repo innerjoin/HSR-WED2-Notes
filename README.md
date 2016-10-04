@@ -8,6 +8,7 @@ Basiert auf: https://code.visualstudio.com/docs/runtimes/nodejs
 So wurde Projekt aufgesetzt
 * `git init`
 * `git pull https://github.com/...`
+* `git config --global credential.helper wincred`
 * `npm init`
 * `npm install --save typings`
 * ... usw für...
