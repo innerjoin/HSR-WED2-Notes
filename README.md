@@ -3,32 +3,32 @@
 
 ## Setup
 So wurde Projekt aufgesetzt
-- `git init`
-- `git pull https://github.com/...`
-- `npm init`
-- `npm install --save typings`
-- ... usw für...
---- node
---- express
---- nedb
---- und allfällige weitere Abhängigkeiten
-- `typings init`
-- `typings search node`
-- `typings install node --save --global --source dt`
---- dt allenfalls durch anderes ersetzen, je nachdem was search für ein repository anzeigt.
-- instll-Kommando für folgende Erweiterungen wiederholen (search optional, nur um Name herauszufinden)
---- express
---- serve-static
---- express-serve-static-core
---- nedb
+* `git init`
+* `git pull https://github.com/...`
+* `npm init`
+* `npm install --save typings`
+* ... usw für...
+   * node
+   * express
+   * nedb
+   * und allfällige weitere Abhängigkeiten
+* `typings init`
+* `typings search node`
+* `typings install node --save --global --source dt`
+* dt allenfalls durch anderes ersetzen, je nachdem was search für ein repository anzeigt.
+* instll-Kommando für folgende Erweiterungen wiederholen (search optional, nur um Name herauszufinden)
+   * express
+   * serve-static
+   * express-serve-static-core
+   * nedb
 
 ### neues Modul hinzufügen
 1. Modul installieren:
-```npm install --save <mymodule>
+`npm install --save <mymodule>`
 2. Typings suchen
-```typings search <mymodule>
+`typings search <mymodule>`
 3. Typings installieren
-```typings install <mymodule> --save --global --source dt
+`typings install <mymodule> --save --global --source dt`
 
 ## Anforderungen
 Ihre Miniprojekt-Aufgabe besteht darin, eine Notizen-Webapplikation zu programmieren. Es soll möglich sein Notizen zu verwalten. Die Grundlagen bilden die Wireframes, welche den Funktionalitätsumfang zeigen. Zusätzlich definiert das Video „Testat-WED2.mp4“ die dynamische Ansicht der Webseite (z.B. vom Fluiden Design / Validation / Style Switcher). Ihre Aufgabe ist den kompletten Funktionsumfang der Wireframes zu implementieren und die im Video visualisierten Feinheiten zu berücksichtigen.
