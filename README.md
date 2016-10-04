@@ -2,6 +2,9 @@
 ## web app to manage personal notes - Testat project for HSR WED2 Module
 
 ## Setup
+### Visual Studio Code
+Basiert auf: https://code.visualstudio.com/docs/runtimes/nodejs
+### Dependency Management
 So wurde Projekt aufgesetzt
 * `git init`
 * `git pull https://github.com/...`
