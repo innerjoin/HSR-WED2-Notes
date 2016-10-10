@@ -14,6 +14,6 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.use(require('./controllers/routes'));
 
-app.listen(port, hostname, () => {
-    console.log(`Server running @ http://${hostname}:${port}`);
+app.listen(port, hostname, function() {
+    console.log('Server running @ http://${hostname}:${port}');
 });
