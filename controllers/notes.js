@@ -4,7 +4,11 @@ var router = express.Router();
 // list all notes
 router.get('/', function(req, res) {
     console.log("/notes");
-    res.render("notes");
+    var notes = [
+        {id: 1, title: "title", description: "this isch ä deskribschen", importance: 3, dueDate: "2016-09-25", finished: false},
+        {id: 2, title: "other title", description: "this isch änöddr deskribschen", importance: 5, dueDate: "2016-10-18", finished: true}
+    ];
+    res.render("notes", {notes: notes});
 });
 
 // new note

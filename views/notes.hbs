@@ -13,7 +13,9 @@
         </div>
         <div>
             {{#each notes}}
-                {{> note}}
+                {{> note }}
+            {{else}}
+                <a href="notes/add">Be the first one to add a note!</a>
             {{/each}}
         </div>
     {{/inline}}
