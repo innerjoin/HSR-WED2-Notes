@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.14.0",
+    "express-hbs": "^1.0.3",
     "nedb": "^1.8.0",
     "node": "0.0.0",
     "typings": "^1.4.0"
