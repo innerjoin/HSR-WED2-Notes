@@ -2,7 +2,16 @@
     <hr>
     <p>{{title}}</p>
     <p>{{description}}</p>
-    <form action="/notes/{{id}}">
+
+    <div class="rating">
+        <input type="radio" id="{{_id}}_importance4" name="{{_id}}_importance" value="4" /><label class="imp4" for="{{_id}}_importance4">Immediate</label>
+        <input type="radio" id="{{_id}}_importance3" name="{{_id}}_importance" value="3" /><label class="imp3" for="{{_id}}_importance3">High</label>
+        <input type="radio" id="{{_id}}_importance2" name="{{_id}}_importance" value="2" checked /><label class="imp2" for="{{_id}}_importance2">Medium</label>
+        <input type="radio" id="{{_id}}_importance1" name="{{_id}}_importance" value="1" /><label class="imp1" for="{{_id}}_importance1">Low</label>
+    </fieldset>
+    <br/>
+
+    <form action="/notes/{{_id}}">
         <input type="submit" value="Edit"></input>
     </form> 
 </div>
