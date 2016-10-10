@@ -1,0 +1,20 @@
+{{#> layout}}
+    {{#*inline "nav"}}
+        <a href="notes/add">New Note</a>
+    {{/inline}}
+    {{#*inline "content"}}
+        <div class="order">
+            <button>By finish Date</button>
+            <button>By created Date</button>
+            <button>By Importance</button>
+            <div class="toggle-button">
+                Show finished <button></button>
+            </div>
+        </div>
+        <div>
+            {{#each notes}}
+                {{> note}}
+            {{/each}}
+        </div>
+    {{/inline}}
+{{/layout}}

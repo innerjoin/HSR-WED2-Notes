@@ -4,13 +4,13 @@ var router = express.Router();
 // list all notes
 router.get('/', function(req, res) {
     console.log("/notes");
-    res.end();
+    res.render("notes");
 });
 
 // new note
-router.get('/new', function(req, res) {
+router.get('/add', function(req, res) {
     console.log("GET /notes/new");
-    res.end();
+    res.render("add");
 });
 
 // create note
@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
 // edit note
 router.get('/:id', function(req, res) {
     console.log("GET /notes/:id");
-    res.end();
+    res.render("edit");
 });
 
 // write edited note
