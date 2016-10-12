@@ -5,6 +5,7 @@ var hbs = require('express-hbs');
 
 const port = 3000;
 const hostname = '127.0.0.1';
+const importanceTypes = ["", "Low", "Medium", "High", "Immediate"];
 
 app.engine('hbs', hbs.express4({
   partialsDir: __dirname + '/views/partials'
@@ -23,6 +24,19 @@ hbs.registerHelper('if_eq', function(a, b, opts) {
         return opts.fn(this);
     else
         return opts.inverse(this);
+});
+
+hbs.registerHelper('loop', function(n, importance,_id, block) {
+    var temp = '';
+    for(var i = n; i >= 1; --i)
+    {
+        var importanceType = ""+importanceTypes[i];
+        temp += block.fn({index:i, importanceType:importanceType, id:_id});
+        if(i == importance)
+            temp = temp.replace(''+i+'" />', ''+i+'" checked/>');
+    }
+    console.log(temp);
+    return temp;
 });
 
 app.listen(port, hostname, () => {
