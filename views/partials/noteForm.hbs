@@ -1,1 +1,19 @@
 <p>ich bin das add/edit formular</p>
+{{#if note._id}}
+    <form action="/notes/{{note._id}}" method="post">
+        <p>Titel:        <input name='title' value="{{note.title}}"></p>
+        <p>Beschreibung: <textarea name='description' rows="10" cols="50">{{note.description}}</textarea></p>
+        <p>Wichtigkeit:  <input name='importance' value="{{note.importance}}"></p>
+        <p>Erledigt bis: <input name='dueDate' value="{{note.dueDate}}"></p>
+        <input type="submit" value="Save note"/>
+    </form>
+{{else}}
+    <form action="/notes" method="post">
+        <p>Titel:        <input name='title' placeholder='Titel'></p>
+        <p>Beschreibung: <textarea name='description' rows="10" cols="50" placeholder='Beschreibung'></textarea></p>
+        <p>Wichtigkeit:  <input name='importance' placeholder='Wichtigkeit [1]'></p>
+        <p>Erledigt bis: <input name='dueDate' placeholder='Erledigt bis'></p>
+
+        <input type="submit" value="Create Note"/>
+    </form>
+{{/if}}

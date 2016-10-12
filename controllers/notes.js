@@ -6,7 +6,6 @@ var store = require('../service/noteStore');
 router.get('/', function(req, res) {
     console.log("/notes");
     store.all(function(err, data) {
-        console.log(err, data);
         res.format({
             'text/html': function(){
                 res.render("notes", {notes: data});
@@ -34,20 +33,18 @@ router.get('/add', function(req, res) {
 // create note
 router.post('/', function(req, res) {
     console.log("POST /notes");
-    store.add(req.body.title, req.body.description, req.body.importance,req.body.finishedUnitl, "unkown", function(err, note) {
-        console.log("POST /notes");
-        res.end();
+    store.add(req.body.title, req.body.description, req.body.importance,req.body.dueDate, "unkown", function(err, note) {
+        //res.render("notes", {notes: data});
+        res.redirect("/");
     });
 });
 
 // edit note
 router.get('/:id', function(req, res) {
-    console.log("GET /notes/:id");
-
     store.get(req.params.id, function(err, note) {
         res.format({
             'text/html': function(){
-                res.render("edit");
+                res.render("edit", {note:note});
             },
             'application/json': function(){
                 res.json(note);
@@ -57,11 +54,12 @@ router.get('/:id', function(req, res) {
 });
 
 // write edited note
-router.put('/:id', function(req, res) {
+router.post('/:id', function(req, res) {
     console.log("PUT /notes/:id");
-    store.modify(req.params.id, req.body.title, req.body.description, req.body.importance,req.body.state,req.body.finishedUnitl, function(err, note) {
-        res.end();
+    store.modify(req.params.id, req.body.title, req.body.description, req.body.importance,req.body.state,req.body.dueDate, function(err, note) {
+        res.redirect("/");
     });
+
 });
 
 module.exports = router;
