@@ -4,6 +4,7 @@
   "description": "Ihre Miniprojekt-Aufgabe besteht darin, eine Notizen-Webapplikation zu programmieren. Es soll möglich sein Notizen zu verwalten. Die Grundlagen bilden die Wireframes, welche den Funktionalitätsumfang zeigen. Zusätzlich definiert das Video „Testat-WED2.mp4“ die dynamische Ansicht der Webseite (z.B. vom Fluiden Design / Validation / Style Switcher). Ihre Aufgabe ist den kompletten Funktionsumfang der Wireframes zu implementieren und die im Video visualisierten Feinheiten zu berücksichtigen.\r Am Aussehen dürfen Anpassungen vorgenommen werden.",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-hbs": "^1.0.3",
     "nedb": "^1.8.0",
