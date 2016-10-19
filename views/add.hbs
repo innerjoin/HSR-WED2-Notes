@@ -3,6 +3,9 @@
         <a href="/notes">Back to list</a>
     {{/inline}}
     {{#*inline "content"}}
-        {{> noteForm}}
+        <form action="/notes" method="post">
+            {{> noteForm}}
+            <p><input type="submit" value="Create Note"/></p>
+        </form>
     {{/inline}}
 {{/layout}}
