@@ -34,6 +34,15 @@ So wurde Projekt aufgesetzt
 3. Typings installieren
 `typings install <mymodule> --save --global --source dt`
 
+### SASS zu CSS Transpilation
+1. SASS installieren
+`npm install --save -g node-sass`
+2. Gulp installieren
+`npm install -g gulp`
+`npm install --save gulp gulp-sass`
+3. gulpfile.js erstellen, welches SASS zu CSS umwandelt
+4. Task erstellen, welcher SASS Kompilation automatisch ausführt
+
 ## Anforderungen
 Ihre Miniprojekt-Aufgabe besteht darin, eine Notizen-Webapplikation zu programmieren. Es soll möglich sein Notizen zu verwalten. Die Grundlagen bilden die Wireframes, welche den Funktionalitätsumfang zeigen. Zusätzlich definiert das Video „Testat-WED2.mp4“ die dynamische Ansicht der Webseite (z.B. vom Fluiden Design / Validation / Style Switcher). Ihre Aufgabe ist den kompletten Funktionsumfang der Wireframes zu implementieren und die im Video visualisierten Feinheiten zu berücksichtigen.
 Am Aussehen dürfen Anpassungen vorgenommen werden.
