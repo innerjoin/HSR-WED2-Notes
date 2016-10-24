@@ -6,11 +6,9 @@ var hbsHelpers = require('./views/helpers/helpers');
 
 const port = 3000;
 const hostname = '127.0.0.1';
-const importanceTypes = ["", "Low", "Medium", "High", "Immediate"];
 
 app.engine('hbs', hbs.express4({
-    partialsDir: __dirname + '/views/partials',
-    
+    partialsDir: __dirname + '/views/partials'
 }));
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
