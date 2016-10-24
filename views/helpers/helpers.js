@@ -1,12 +1,5 @@
 var hbs = require('express-hbs');
 
-hbs.registerHelper('if_eq', function(a, b, opts) {
-    if(a == b) // Or === depending on your needs
-        return opts.fn(this);
-    else
-        return opts.inverse(this);
-});
-
 hbs.registerHelper('loop', function(n, importance,_id, block) {
     const importanceTypes = ["", "Very Low", "Low", "Medium", "High", "Immediate"];
     var temp = '';
