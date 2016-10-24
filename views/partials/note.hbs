@@ -3,7 +3,7 @@
     <p>{{title}}</p>
     <p>{{description}}</p>
     <div class="rating">
-        {{#loop 4 importance _id}}
+        {{#loop 5 importance _id}}
             <input type="radio" id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" /><label class="imp{{this.index}}" for="{{this.id}}_importance{{this.index}}">{{this.importanceType}}</label>
         {{/loop}}
         <br/>

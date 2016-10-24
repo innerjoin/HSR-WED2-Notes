@@ -8,7 +8,7 @@ hbs.registerHelper('if_eq', function(a, b, opts) {
 });
 
 hbs.registerHelper('loop', function(n, importance,_id, block) {
-    const importanceTypes = ["", "Low", "Medium", "High", "Immediate"];
+    const importanceTypes = ["", "Very Low", "Low", "Medium", "High", "Immediate"];
     var temp = '';
     for(var i = n; i >= 1; --i)
     {
