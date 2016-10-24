@@ -16,7 +16,7 @@
 .rating > input:checked ~ .imp4,
 .rating:not(:checked) > .imp4:hover,
 .rating:not(:checked) > .imp4:hover ~ .imp4 {
-  color: red; }
+  color: tomato; }
 
 .rating > input:checked ~ .imp5,
 .rating:not(:checked) > .imp5:hover,
