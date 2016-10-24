@@ -1,62 +1,44 @@
-.rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-    clip:rect(0,0,0,0);
-}
-
-.rating:not(:checked) > label {
-    float:right;
-    width:0.4em;
-    padding:0 .1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:200%;
-    line-height:1.2;
-    color:#ddd;
-    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating:not(:checked) > label:before {
-    content: '! ';
-}
-
 .rating > input:checked ~ .imp1,
 .rating:not(:checked) > .imp1:hover,
 .rating:not(:checked) > .imp1:hover ~ .imp1 {
-    color: lightgoldenrodyellow;
-}
+  color: lightgoldenrodyellow; }
 
 .rating > input:checked ~ .imp2,
 .rating:not(:checked) > .imp2:hover,
 .rating:not(:checked) > .imp2:hover ~ .imp2 {
-    color: gold;
-}
+  color: gold; }
 
 .rating > input:checked ~ .imp3,
 .rating:not(:checked) > .imp3:hover,
 .rating:not(:checked) > .imp3:hover ~ .imp3 {
-    color: darkorange;
-}
+  color: darkorange; }
 
 .rating > input:checked ~ .imp4,
 .rating:not(:checked) > .imp4:hover,
 .rating:not(:checked) > .imp4:hover ~ .imp4 {
-    color: red;
-    /*text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);*/
-}
+  color: red; }
 
-/*.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-    color: grey;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
-}*/
+.rating > input:checked ~ .imp5,
+.rating:not(:checked) > .imp5:hover,
+.rating:not(:checked) > .imp5:hover ~ .imp5 {
+  color: darkred; }
 
-/*.rating > label:active {
-    position:relative;
-    top:2px;
-    left:2px;
-}*/
+.rating:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0, 0, 0, 0); }
+
+.rating:not(:checked) > label {
+  float: right;
+  width: 0.4em;
+  padding: 0 .1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  line-height: 1.2;
+  color: #ddd;
+  text-shadow: 1px 1px #bbb, 2px 2px #666, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5); }
+
+.rating:not(:checked) > label:before {
+  content: '! '; }
