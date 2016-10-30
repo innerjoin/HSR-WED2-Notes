@@ -1,21 +1,33 @@
 {{#> layout}}
     {{#*inline "nav"}}
-        <a href="notes/add">New Note</a>
+        <a class="button invert" href="notes/add">New Note</a>
+        <span>
+            <form action="/" method="POST">
+                <select class="invert">
+                    <option selected>Red</option>
+                    <option>Dark</option>
+                    <option>Bad Taste</option>
+                </select>
+                <input class="invert" type="submit" value="Switch Theme" />
+            </form>
+        </span>
     {{/inline}}
     {{#*inline "content"}}
         <div class="order">
             <button>By finish Date</button>
-            <button>By created Date</button>
+            <button class="activeFilter">By created Date</button>
             <button>By Importance</button>
-            <div class="toggle-button">
-                Show finished <button></button>
+            <div class="toggle">
+                <input type="checkbox" id="cboShowFinished" checked> <label for="cboShowFinished">Show finished</label>
             </div>
         </div>
-        <div>
+        <div class="notes"> 
             {{#each notes}}
                 {{> note }}
             {{else}}
-                <a href="notes/add">Be the first one to add a note!</a>
+                <div class="noNotesFound">
+                    <a class="button" href="notes/add">No notes found! Be the first one to add a note!</a>
+                </div>
             {{/each}}
         </div>
     {{/inline}}

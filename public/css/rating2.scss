@@ -1,0 +1,33 @@
+@import 'colors.scss';
+
+.rating {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    input {
+        display: none;
+        &:checked ~ label {
+            color: $primaryColor;
+        }
+    }
+    label {
+        color: #ccc;
+        &:hover, &:hover ~ label {
+            color: $invertActiveBGColor;
+        }
+        &:before {
+            display: inline-block;
+            content: "!";
+            width: 18px;
+            line-height: 18px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+    }
+}

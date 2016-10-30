@@ -1,17 +1,25 @@
-<label for="noteTitle">Title:</label>
-<input type="text" id="noteTitle" name="title" value="{{note.title}}" />
+<div class="formRow">
+    <label for="noteTitle">Title</label>
+    <input type="text" id="noteTitle" name="title" value="{{note.title}}" required/>
+</div>
 
-<label for="noteDescription">Description:</label>
-<textarea id="noteDescription" name="description" value="{{note.description}}"></textarea>
+<div class="formRow">
+    <label for="noteDescription">Description</label>
+    <textarea id="noteDescription" name="description" value="{{note.description}}" required></textarea>
+</div>
 
-<label for="noteDueDate">Due Date:</label>
-<input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" />
+<div class="formRow">
+    <label for="noteDueDate">Due Date</label>
+    <input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" required />
+</div>
 
-<label for="noteImportance">Importance:</label>
-    <p><input name='importance' value="{{note.importance}}"></p>
-    <div class="rating">
+<div class="formRow">
+    <label for="noteImportance">Importance</label>
+
+    <select id="noteImportance" name="importance" required>
+        <option disabled selected value> -- select an option -- </option>
         {{#loop 5 note.importance note._id}}
-            <input type="radio" id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" /><label class="imp{{this.index}}" for="{{this.id}}_importance{{this.index}}">{{this.importanceType}}</label>
+            <option id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}">{{importanceType}}</option>
         {{/loop}}
-    </div>
-
+    </select>
+</div>

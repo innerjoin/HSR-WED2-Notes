@@ -10,7 +10,6 @@ hbs.registerHelper('loop', function(n, importance,_id, block) {
         if(i == importance)
             temp = temp.replace(''+i+'" />', ''+i+'" checked/>');
     }
-    console.log(temp);
     return temp;
 });
 
