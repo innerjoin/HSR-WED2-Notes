@@ -4,9 +4,9 @@
         <span>
             <form action="/notes" method="get">
                 <select class="invert" name="style">
-                    <option {{#if_eq style 'Red'}}selected{{/if_eq}}>Red</option>
-                    <option {{#if_eq style 'Dark'}}selected{{/if_eq}}>Dark</option>
-                    <option>Bad Taste</option>
+                    <option {{#if_eq style 'red'}}selected{{/if_eq}}>Red</option>
+                    <option {{#if_eq style 'grey'}}selected{{/if_eq}}>Grey</option>
+                    <option {{#if_eq style 'black'}}selected{{/if_eq}}>Black</option>
                 </select>
                 <input class="invert" type="submit" value="Switch Theme" />
             </form>
