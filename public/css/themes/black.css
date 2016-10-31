@@ -1,0 +1,165 @@
+.rating {
+  display: inline-block;
+  unicode-bidi: bidi-override;
+  direction: rtl; }
+  .rating * {
+    margin: 0;
+    padding: 0; }
+  .rating input {
+    display: none; }
+    .rating input:checked ~ label {
+      color: #AAAAAA; }
+  .rating label {
+    color: #ccc; }
+    .rating label:hover, .rating label:hover ~ label {
+      color: #DDDDDD; }
+    .rating label:before {
+      display: inline-block;
+      content: "!";
+      width: 18px;
+      line-height: 18px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Handlee', cursive;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 0.8em; }
+  body > * {
+    padding: 0.5rem; }
+
+a {
+  text-decoration: none; }
+
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto; }
+
+.noNotesFound {
+  position: absolute;
+  top: 10rem; }
+
+.formRow {
+  display: block;
+  clear: left;
+  margin: 5px; }
+  .formRow > * {
+    display: block;
+    clear: both; }
+  .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
+    width: 100%; }
+    .formRow input[type=text]:valid, .formRow input[type=date]:valid, .formRow textarea:valid, .formRow select:valid {
+      border: 1px solid green; }
+  .formRow > label:after {
+    content: ' *';
+    color: #AAAAAA; }
+
+textarea {
+  resize: vertical; }
+
+button, select, input, textarea, a.button {
+  font-family: 'Handlee', cursive;
+  box-sizing: content-box;
+  border: 1px solid #AAAAAA;
+  border-radius: 1px;
+  color: #AAAAAA;
+  background-color: #000000;
+  cursor: pointer;
+  padding: 1px 4px 1px 4px;
+  margin: 0;
+  line-height: 19px; }
+  button:hover, select:hover, input:hover, textarea:hover, a.button:hover {
+    background-color: #333333;
+    font-weight: bold;
+    cursor: pointer; }
+  button:active, select:active, input:active, textarea:active, a.button:active {
+    cursor: text; }
+  button.invert, select.invert, input.invert, textarea.invert, a.button.invert {
+    color: #000000;
+    background-color: #AAAAAA;
+    border-color: #000000; }
+    button.invert:hover, select.invert:hover, input.invert:hover, textarea.invert:hover, a.button.invert:hover {
+      background-color: #DDDDDD; }
+
+nav {
+  background-color: #AAAAAA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #000000;
+  margin: 0;
+  padding: 0.5rem; }
+
+.order {
+  display: flex;
+  flex-direction: column; }
+  .order form {
+    display: flex; }
+  .order input {
+    flex: 1 1 auto;
+    margin: 0.3rem; }
+  .order .activeFilter {
+    background-color: #AAAAAA;
+    color: #000000;
+    font-weight: bold; }
+
+.note {
+  border-top: 0.1rem dotted #AAAAAA;
+  padding-bottom: 5px; }
+
+.note:first-child {
+  padding-top: 5px;
+  margin-top: 5px;
+  border-top: 0.1rem solid #AAAAAA; }
+
+@media screen and (min-width: 33em) {
+  .order {
+    display: flex;
+    flex-direction: row; }
+  .formRow > * {
+    display: inline-block; }
+  .formRow > label {
+    width: 33%; }
+  .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
+    width: 50%; } }
+
+input[type=checkbox] {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  background-color: #000000;
+  outline: 0;
+  border: 1px solid #AAAAAA;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none; }
+  input[type=checkbox]:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none; }
+  input[type=checkbox]:checked {
+    text-align: center;
+    line-height: 15px; }
+    input[type=checkbox]:checked:checked:before {
+      content: '\2714'; }
