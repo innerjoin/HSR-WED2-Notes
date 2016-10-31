@@ -1,7 +1,7 @@
 var hbs = require('express-hbs');
 
 hbs.registerHelper('loop', function(n, importance,_id, block) {
-    const importanceTypes = ["", "Low", "Medium", "High", "Immediate"];
+    const importanceTypes = ["", "Very Low", "Low", "Medium", "High", "Immediate"];
     var temp = '';
     for(var i = n; i >= 1; --i)
     {

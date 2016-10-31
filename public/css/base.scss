@@ -1,0 +1,153 @@
+@import 'helpers/vendor-prefix.scss';
+@import 'colors.scss';
+@import 'rating2.scss';
+@import 'toggle.css';
+
+$outline: 0.5rem;
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Handlee', cursive;
+    > * {
+        padding: $outline;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  @include vendor-prefix('hyphens', 'auto');
+}
+
+.noNotesFound {
+    position: absolute;
+    top: 10rem;
+}
+
+.formRow {
+    display: block;
+    clear: left;
+    margin: 5px;
+    > * {
+        display: block;
+        clear: both;
+    }
+    input[type=text], input[type=date], textarea, select {
+        width: 100%;
+        &:valid {
+            border: 1px solid green;
+        }
+    }
+    > label {
+        &:after {
+            content: ' *';
+            color: $primaryColor;
+        }
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+button, select, input, textarea, a.button {
+    font-family: 'Handlee', cursive;
+    font-size: 0.8em;
+    box-sizing:content-box;
+    border: 1px solid $primaryColor;
+    border-radius: 1px;
+    color: $primaryColor;
+    background-color: white;
+    cursor: pointer;
+    padding: 1px 4px 1px 4px;
+    margin: 0;
+    &:hover {
+        background-color: $activeBGColor;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    &:active {
+        cursor: text;
+    }
+    &.invert {
+        color: white;
+        background-color: #f02541;
+        border-color: white;
+        &:hover {
+            background-color: $invertActiveBGColor;
+        }
+    }
+}
+
+nav {
+    background-color: $primaryColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    margin: 0;
+    padding: $outline;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    > * {
+        margin: 0.3rem;
+        width: 100%;
+    }
+
+    .activeFilter {
+        background-color: $primaryColor;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+.note {
+    border-top: 0.1rem dotted $primaryColor;
+    padding-bottom: 5px;
+}
+
+.note:first-child {
+    padding-top: 5px;
+    margin-top: 5px;
+    border-top: 0.1rem solid $primaryColor;
+}
+
+@media screen and (min-width: 33em) {
+    .order {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        > * {
+            width: 100%;
+        }
+    }
+
+    .formRow {
+        > * {
+            display: inline-block;
+        }
+        > label {
+            width: 33%;
+        }
+        input[type=text], input[type=date], textarea, select {
+            width: 50%;
+        }
+    }
+}
+
+.toggle {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    > label {
+        padding-right: 0.6rem;
+    }
+}

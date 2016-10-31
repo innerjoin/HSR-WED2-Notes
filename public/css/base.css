@@ -1,0 +1,142 @@
+@import url(toggle.css);
+.rating {
+  display: inline-block;
+  unicode-bidi: bidi-override;
+  direction: rtl; }
+  .rating * {
+    margin: 0;
+    padding: 0; }
+  .rating input {
+    display: none; }
+    .rating input:checked ~ label {
+      color: #f02541; }
+  .rating label {
+    color: #ccc; }
+    .rating label:hover, .rating label:hover ~ label {
+      color: #f04455; }
+    .rating label:before {
+      display: inline-block;
+      content: "!";
+      width: 18px;
+      line-height: 18px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Handlee', cursive; }
+  body > * {
+    padding: 0.5rem; }
+
+a {
+  text-decoration: none; }
+
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto; }
+
+.noNotesFound {
+  position: absolute;
+  top: 10rem; }
+
+.formRow {
+  display: block;
+  clear: left;
+  margin: 5px; }
+  .formRow > * {
+    display: block;
+    clear: both; }
+  .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
+    width: 100%; }
+    .formRow input[type=text]:valid, .formRow input[type=date]:valid, .formRow textarea:valid, .formRow select:valid {
+      border: 1px solid green; }
+    .formRow input[type=text]:invalid, .formRow input[type=date]:invalid, .formRow textarea:invalid, .formRow select:invalid {
+      border: 2px dotted #f02541; }
+  .formRow > label:after {
+    content: ' *';
+    color: #f02541; }
+
+textarea {
+  resize: vertical; }
+
+button, select, input, textarea, a.button {
+  font-family: 'Handlee', cursive;
+  font-size: 0.8em;
+  box-sizing: content-box;
+  border: 1px solid #f02541;
+  border-radius: 1px;
+  color: #f02541;
+  background-color: white;
+  cursor: pointer;
+  padding: 1px 4px 1px 4px;
+  margin: 0; }
+  button:hover, select:hover, input:hover, textarea:hover, a.button:hover {
+    background-color: #F1DBDE;
+    font-weight: bold;
+    cursor: pointer; }
+  button:active, select:active, input:active, textarea:active, a.button:active {
+    cursor: text; }
+  button.invert, select.invert, input.invert, textarea.invert, a.button.invert {
+    color: white;
+    background-color: #f02541;
+    border-color: white; }
+    button.invert:hover, select.invert:hover, input.invert:hover, textarea.invert:hover, a.button.invert:hover {
+      background-color: #f04455; }
+
+nav {
+  background-color: #f02541;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  margin: 0;
+  padding: 0.5rem; }
+
+.order {
+  display: flex;
+  flex-direction: column; }
+  .order > * {
+    margin: 0.3rem;
+    width: 100%; }
+  .order .activeFilter {
+    background-color: #f02541;
+    color: white;
+    font-weight: bold; }
+
+.note {
+  border-top: 0.1rem dotted #f02541;
+  padding-bottom: 5px; }
+
+.note:first-child {
+  padding-top: 5px;
+  margin-top: 5px;
+  border-top: 0.1rem solid #f02541; }
+
+@media screen and (min-width: 33em) {
+  .order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .order > * {
+      width: 100%; }
+  .formRow > * {
+    display: inline-block; }
+  .formRow > label {
+    width: 33%; }
+  .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
+    width: 50%; } }
+
+.toggle {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center; }
+  .toggle > label {
+    padding-right: 0.6rem; }
