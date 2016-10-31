@@ -146,17 +146,32 @@ p {
 
 .note {
   border-top: 0.1rem dotted #f02541;
-  padding-bottom: 5px; }
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end; }
+  .note > * {
+    margin-left: 0.2rem !important; }
+  .note > p.caps {
+    font-variant: small-caps;
+    align-self: stretch; }
+  .note > p.caps, .note > p.newline {
+    margin-right: auto;
+    width: 100%; }
 
 .note:first-child {
   padding-top: 5px;
   margin-top: 5px;
   border-top: 0.1rem solid #f02541; }
 
-@media screen and (min-width: 33em) {
+@media screen and (min-width: 25em) {
   .order {
     display: flex;
     flex-direction: row; }
+  .note > p {
+    width: auto; }
   .formRow > * {
     display: inline-block; }
   .formRow > label {
