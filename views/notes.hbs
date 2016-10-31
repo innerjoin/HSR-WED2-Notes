@@ -28,7 +28,7 @@
             </form>
             <form action='/notes' method='get'>
                 <input type="hidden" name="showFinished" value="{{#if_eq showFinished 'true'}}false{{else}}true{{/if_eq}}">
-                <input type="submit" value="Show Finished">
+                <input type="submit" value="Show Finished" {{#if_eq showFinished 'true'}} class="activeFilter"{{/if_eq}}>
             </form>
         </div>
         <div class="notes">
