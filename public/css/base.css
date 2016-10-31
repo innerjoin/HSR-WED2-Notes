@@ -102,9 +102,11 @@ nav {
 .order {
   display: flex;
   flex-direction: column; }
-  .order > * {
-    margin: 0.3rem;
-    width: 100%; }
+  .order form {
+    display: flex; }
+  .order input {
+    flex: 1 1 auto;
+    margin: 0.3rem; }
   .order .activeFilter {
     background-color: #f02541;
     color: white;
@@ -122,10 +124,7 @@ nav {
 @media screen and (min-width: 33em) {
   .order {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around; }
-    .order > * {
-      width: 100%; }
+    flex-direction: row; }
   .formRow > * {
     display: inline-block; }
   .formRow > label {
