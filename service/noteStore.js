@@ -44,38 +44,15 @@ function publicGet(id, callback)
 
 function publicAll(sort, sortOrder,show, callback) {
     if(show === 'false') {
-        db.find({$not: {state: 'FINISHED'}}).sort({[sort]: sortOrder}).exec(function (err, notes) {
+        db.find({$not: {$or: [{state: 'FINISHED'}, {state:'DELETED'}]}}).sort({[sort]: sortOrder}).exec(function (err, notes) {
             callback(err, notes);
         });
     }
 
     else{
-        db.find({}).sort({ [sort]: sortOrder }).exec(function(err, notes) {
+        db.find({$not: {state:'DELETED'}}).sort({ [sort]: sortOrder }).exec(function(err, notes) {
             callback(err, notes);
         });
     }
 }
-
-function publicSort(parameter, all, callback){
-    if(all == true)
-    {
-        db.find({}).sort(parameter).exec(function (err, docs) {
-            callback( err, docs);
-        });
-    }
-    else
-    {
-        db.find({$not: {state:'FINISHED'}}).sort(parameter).exec(function (err, docs) {
-            callback( err, docs);
-        });
-    }
-
-}
-
-function publicFindNotFinished(callback) {
-    db.find({$not: {state:'FINISHED'}} ,function (err, docs) {
-        callback( err, docs);
-    });
-}
-
-module.exports = {add : publicAddNote, modify : publicModify, delete : publicRemove, get : publicGet, getNotFinished: publicFindNotFinished, getSorted: publicSort, all : publicAll};
+module.exports = {add : publicAddNote, modify : publicModify, delete : publicRemove, get : publicGet,  all : publicAll};

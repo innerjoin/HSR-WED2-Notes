@@ -89,4 +89,25 @@ router.post('/:id', function(req, res) {
 
 });
 
+router.get('/delete/:id', function(req, res) {
+    console.log("DELETE /notes/delete/:id");
+    store.get(req.params.id, function(err, note) {
+        res.format({
+            'text/html': function(){
+                res.render("delete", {note:note, blocking:'true', style:req.session.style});
+            },
+            'application/json': function(){
+                res.json(note);
+            }
+        });
+    });
+});
+
+router.post('/delete/:id', function(req, res) {
+    console.log("POST /notes/delete/:id");
+    store.delete(req.params.id, function(err,note){
+        noteController.all(req, res);
+    });
+});
+
 module.exports = router;

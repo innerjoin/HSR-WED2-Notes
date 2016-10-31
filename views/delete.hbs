@@ -1,0 +1,11 @@
+{{#> layout}}
+    {{#*inline "nav"}}
+        <a class="button invert" href="/notes">Back to list</a>
+    {{/inline}}
+    {{#*inline "content"}}
+        <form action="/notes/delete/{{note._id}}" method="post">
+            {{> noteForm }}
+            <p><input type="submit" value="Delete Note"/></p>
+        </form>
+    {{/inline}}
+{{/layout}}
