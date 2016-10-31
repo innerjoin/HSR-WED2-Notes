@@ -1,26 +1,10 @@
 var store = require('../service/noteStore');
 
-function publicGetAll(req, res, config){
-    var sorting;
-    var show;
-    var style;
-    config.forEach(function(conf, index) {
-        if(conf.type == 'sorting'){
-            sorting = conf;
-        }
-
-        if(conf.type == 'show'){
-            show = conf.value;
-        }
-
-        if(conf.type == 'style'){
-            style = conf.value;
-        }
-    });
-    store.all(sorting.value, sorting.params.sortOrder, show, function(err, data, sortBy) {
+function publicGetAll(req, res){
+    store.all(req.session.sorting, req.session.sortOrder, req.session.showFinished, function(err, data) {
         res.format({
             'text/html': function(){
-                res.render("notes", {notes: data, sortBy:sortBy, showFinished:show, sortOrder: sorting.params.sortOrder, style:style.value});
+                res.render("notes", {notes: data, sortBy:req.session.sorting, showFinished:req.session.showFinished, sortOrder: req.session.sortOrder, style:req.session.style});
             },
             'application/json': function(){
                 res.send({});

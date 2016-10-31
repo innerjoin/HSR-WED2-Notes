@@ -9,6 +9,9 @@ var hbsHelpers = require('./views/helpers/helpers');
 const port = 3000;
 const hostname = '127.0.0.1';
 
+app.use(require("cookie-parser")());
+app.use(session({ secret: 'casduichasidbnuwezrfinasdcvjkadfhsuilfuzihfioda', resave: false, saveUninitialized: true }));
+
 app.engine('hbs', hbs.express4({
     partialsDir: __dirname + '/views/partials'
 }));
