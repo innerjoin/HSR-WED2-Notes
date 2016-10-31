@@ -29,7 +29,7 @@ router.get('/add', function(req, res) {
 // create note
 router.post('/', function(req, res) {
     console.log("POST /notes");
-    store.add(req.body.title, req.body.description, req.body.importance,req.body.dueDate, "unkown", function(err, note) {
+    store.add(req.body.title, req.body.description, req.body.importance,req.body.dueDate,req.body.finished, "unkown", function(err, note) {
         //res.render("notes", {notes: data});
         res.redirect("/");
     });
@@ -38,7 +38,6 @@ router.post('/', function(req, res) {
 // edit note
 router.get('/:id', function(req, res) {
     console.log("GET /notes/:id");
-    console.log(req.params.id);
     store.get(req.params.id, function(err, note) {
         res.format({
             'text/html': function(){
@@ -54,6 +53,8 @@ router.get('/:id', function(req, res) {
 // write edited note
 router.post('/:id', function(req, res) {
     console.log("PUT /notes/:id");
+    if(req.body.finished != undefined)
+        req.body.state = 'FINISHED';
     store.modify(req.params.id, req.body.title, req.body.description, req.body.importance,req.body.state,req.body.dueDate, function(err, note) {
         res.redirect("/");
     });

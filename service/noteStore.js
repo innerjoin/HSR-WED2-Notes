@@ -12,9 +12,11 @@ function Note(title, description, importance, dueDate,orderedBy )
     this.state = "NEW";
 }
 
-function publicAddNote(title, description, importance, dueDate, orderedBy, callback )
+function publicAddNote(title, description, importance, dueDate, finished, orderedBy, callback )
 {
     var note = new Note(title, description, importance, dueDate, orderedBy);
+    if(finished == 'true')
+        note.state = 'FINISHED';
     db.insert(note, function(err, newDoc){
         if(callback){
             callback(err, newDoc);

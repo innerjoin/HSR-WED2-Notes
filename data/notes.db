@@ -6,4 +6,8 @@
 {"title":"Janick","description":"Schlafen gehen","importance":"4","createdDate":"\"2016-10-12T20:25:44.665Z\"","dueDate":"Jetzt","orderedBy":"unkown","state":"FINISHED","_id":"OHxz6wLtc64yaFdj"}
 {"title":"GUguland","description":"GUGUS_BEschreibung","importance":"3","createdDate":"\"2016-10-12T06:28:59.104Z\"","dueDate":"Irgendwann","orderedBy":"unkown","state":"NEW","_id":"V5NEtgFQOOnju3KC"}
 {"title":"Gustavo","description":"Ein kleiner gustavo","importance":"4","createdDate":"\"2016-10-10T09:49:18.372Z\"","dueDate":"Heute","orderedBy":"unkown","state":"NEW","_id":"dphci0Wgsyo6C8mP"}
+{"title":"Erster richtiger Test","description":"eine chleine beschreibende Text2222","importance":"2","createdDate":"\"2016-10-31T10:18:59.423Z\"","dueDate":"2019-06-07","orderedBy":"unkown","_id":"khObcpppRR25ueLs"}
 {"title":"sdafasdfasdf","description":"sdfhasjhlks","importance":"1","createdDate":"\"2016-10-12T07:11:54.973Z\"","dueDate":"Irgendwann","orderedBy":"unkown","state":"NEW","_id":"yntFwb8jUoXhCclF"}
+{"title":"Erster richtiger Test","description":"eine chleine beschreibende Text2222","importance":"2","createdDate":"\"2016-10-31T10:18:59.423Z\"","dueDate":"2019-06-07","orderedBy":"unkown","_id":"khObcpppRR25ueLs","state":"FINISHED"}
+{"title":"Hoi luki du alte gustavo","description":"Saucheib","importance":"4","createdDate":"\"2016-10-31T10:39:43.279Z\"","dueDate":"1999-04-01","orderedBy":"unkown","state":"NEW","_id":"BgdHQwBeJwH6RSZe"}
+{"title":"Hoi luki du alte gustavo","description":"Saucheib","importance":"4","createdDate":"\"2016-10-31T10:39:43.279Z\"","dueDate":"1999-04-01","orderedBy":"unkown","state":"FINISHED","_id":"BgdHQwBeJwH6RSZe"}
