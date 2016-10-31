@@ -22,21 +22,14 @@
                 <input type="hidden" name="sorting" value="createdDate">
                 <input type="submit" value="By created date" {{#if_eq sortBy 'createdDate'}} {{#if_eq sortOrder 1}} class="activeFilter"{{/if_eq}}{{/if_eq}}>
             </form>
-            <form action='/notes' method='get'>
-                <input type="hidden" name="sorting" value="importance">
-                <input type="submit" value="By importance" {{#if_eq sortBy 'importance'}}{{#if_eq sortOrder 1}} class="activeFilter"{{/if_eq}}{{/if_eq}}>
-            </form>
-            <form action='/notes' method='get'>
-                <input type="hidden" name="style" value="{{#if_eq style 'Red'}}Dark{{else}}Red{{/if_eq}}">
-                <input type="submit" value="switch style">
+            <form action='/notes' method='get' class="btn-sort">
+                <input type="hidden" name="sorting" value="importance" >
+                <input type="submit" value="By importance" {{#if_eq sortBy 'importance'}} class="activeFilter"{{/if_eq}}>
             </form>
             <form action='/notes' method='get'>
                 <input type="hidden" name="showFinished" value="{{#if_eq showFinished 'true'}}false{{else}}true{{/if_eq}}">
                 <input type="submit" value="Show Finished" {{#if_eq showFinished 'true'}} class="activeFilter"{{/if_eq}}>
             </form>
-            <div class="toggle">
-                <input type="checkbox" id="cboShowFinished" checked> <label for="cboShowFinished">Show finished</label>
-            </div>
         </div>
         <div class="notes">
             {{#each notes}}
