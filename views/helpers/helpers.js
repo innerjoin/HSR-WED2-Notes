@@ -10,8 +10,14 @@ hbs.registerHelper('loop', function(n, importance,_id, block) {
         if(i == importance)
             temp = temp.replace(''+i+'" />', ''+i+'" checked/>');
     }
-    console.log(temp);
     return temp;
+});
+
+hbs.registerHelper('if_eq', function(a, b, opts) {
+    if (a === b) {
+        return opts.fn(this);
+    }
+    return opts.inverse(this);
 });
 
 module.exports = hbs;

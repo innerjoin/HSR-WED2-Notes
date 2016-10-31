@@ -4,9 +4,26 @@
     {{/inline}}
     {{#*inline "content"}}
         <div class="order">
-            <button>By finish Date</button>
-            <button>By created Date</button>
-            <button>By Importance</button>
+            <form action='/notes' method='get' class="btn-sort">
+                <input type="hidden" name="sorting" value="dueDate">
+                <input type="submit" value="By finish date" {{#if_eq sortBy 'dueDate'}} class="btn-focus"{{/if_eq}} >
+            </form>
+            <form action='/notes' method='get' class="btn-sort">
+                <input type="hidden" name="sorting" value="createdDate">
+                <input type="submit" value="By created date" {{#if_eq sortBy 'createdDate'}} class="btn-focus"{{/if_eq}}>
+            </form>
+            <form action='/notes' method='get' class="btn-sort">
+                <input type="hidden" name="sorting" value="importance"{{#if_eq sortBy 'importance'}} class="btn-focus"{{/if_eq}}>
+                <input type="submit" value="By importance" >
+            </form>
+            <form action='/notes' method='get' class="btn-sort">
+                <input type="hidden" name="style" value="{{#if_eq style 'light'}}dark{{else}}light{{/if_eq}}">
+                <input type="submit" value="switch style">
+            </form>
+            <form action='/notes' method='get' class="btn-sort">
+                <input type="hidden" name="showFinished" value="{{#if_eq showFinished 'true'}}false{{else}}true{{/if_eq}}">
+                <input type="submit" value="Show Finished">
+            </form>
             <div class="toggle-button">
                 Show finished <button></button>
             </div>

@@ -12,7 +12,6 @@ function Note(title, description, importance, dueDate,orderedBy )
     this.state = "NEW";
 }
 
-
 function publicAddNote(title, description, importance, dueDate, orderedBy, callback )
 {
     var note = new Note(title, description, importance, dueDate, orderedBy);
@@ -41,11 +40,41 @@ function publicGet(id, callback)
     });
 }
 
-function publicAll(callback)
-{
-    db.find({}, function (err, docs) {
+function publicAll(sort, sortOrder,show, callback) {
+    console.log(show);
+    if(show === 'false') {
+        db.find({state: 'FINISHED'}).sort({[sort]: sortOrder}).exec(function (err, notes) {
+            callback(err, notes, sort);
+        });
+    }
+
+    else{
+        db.find({}).sort({ [sort]: sortOrder }).exec(function(err, notes) {
+            callback(err, notes, sort);
+        });
+    }
+}
+
+function publicSort(parameter, all, callback){
+    if(all == true)
+    {
+        db.find({}).sort(parameter).exec(function (err, docs) {
+            callback( err, docs);
+        });
+    }
+    else
+    {
+        db.find({$not: {state:'FINISHED'}}).sort(parameter).exec(function (err, docs) {
+            callback( err, docs);
+        });
+    }
+
+}
+
+function publicFindNotFinished(callback) {
+    db.find({$not: {state:'FINISHED'}} ,function (err, docs) {
         callback( err, docs);
     });
 }
 
-module.exports = {add : publicAddNote, modify : publicModify, delete : publicRemove, get : publicGet, all : publicAll};
+module.exports = {add : publicAddNote, modify : publicModify, delete : publicRemove, get : publicGet, getNotFinished: publicFindNotFinished, getSorted: publicSort, all : publicAll};
