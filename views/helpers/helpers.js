@@ -1,11 +1,11 @@
 var hbs = require('express-hbs');
 
 function setImportance(n, importance,_id, block, param, endTag) {
-    const importanceTypes = ["", "Very Low", "Low", "Medium", "High", "Immediate"];
+    const importanceTypes = ["Very Low", "Low", "Medium", "High", "Immediate"];
     var temp = '';
-    for(var i = n; i >= 1; --i)
+    for(var i = n - 1; i >= 0; --i)
     {
-        var importanceType = ""+importanceTypes[i];
+        var importanceType = "" + importanceTypes[i];
         temp += block.fn({index:i, importanceType:importanceType, id:_id});
         if(i == importance)
             temp = temp.replace(''+i+'" '+endTag+'', ''+i+'" '+param+ ''+endTag);
