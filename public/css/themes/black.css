@@ -155,8 +155,7 @@ p {
   .note > * {
     margin-left: 0.2rem !important; }
   .note > p.caps {
-    font-variant: small-caps;
-    align-self: stretch; }
+    font-variant: small-caps; }
   .note > p.caps, .note > p.newline {
     margin-right: auto;
     width: 100%; }
