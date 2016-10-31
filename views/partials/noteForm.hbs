@@ -5,7 +5,7 @@
 
 <div class="formRow">
     <label for="noteDescription">Description</label>
-    <textarea id="noteDescription" name="description" value="{{note.description}}" required></textarea>
+    <textarea id="noteDescription" name="description" required>{{note.description}}</textarea>
 </div>
 
 <div class="formRow">
@@ -15,15 +15,15 @@
 
 <div class="formRow">
     <label for="noteFinished">Finished?</label>
-    <input type="checkbox" id="noteFinished" checked>
+    <input type="checkbox" id="noteFinished" name="finished" {{#if_eq note.state "FINISHED"}}checked{{/if_eq}}>
 </div>
 
 <div class="formRow">
     <label for="noteImportance">Importance</label>
     <select id="noteImportance" name="importance" required>
         <option disabled selected value> -- select an option -- </option>
-        {{#loop 5 note.importance note._id}}
-            <option id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}">{{importanceType}}</option>
-        {{/loop}}
+        {{#loop_option 5 note.importance note._id}}
+            <option id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" >{{importanceType}}</option>
+        {{/loop_option}}
     </select>
 </div>
