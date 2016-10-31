@@ -108,7 +108,7 @@ router.get('/delete/:id', function(req, res) {
 router.post('/delete/:id', function(req, res) {
     console.log("POST /notes/delete/:id");
     store.delete(req.params.id, function(err,note){
-        noteController.all(req, res);
+        res.redirect("/");
     });
 });
 
