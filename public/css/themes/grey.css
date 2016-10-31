@@ -23,6 +23,73 @@
       font-weight: 900;
       cursor: pointer; }
 
+textarea {
+  resize: vertical; }
+
+button, select, input, textarea, a.button {
+  font-family: 'Handlee', cursive;
+  box-sizing: content-box;
+  border: 1px solid #555555;
+  border-radius: 1px;
+  color: #555555;
+  background-color: #ffffff;
+  cursor: pointer;
+  padding: 1px 4px 1px 4px;
+  margin: 0;
+  line-height: 19px; }
+  button:hover, select:hover, input:hover, textarea:hover, a.button:hover {
+    background-color: #cccccc;
+    font-weight: bold;
+    cursor: pointer; }
+  button:active, select:active, input:active, textarea:active, a.button:active {
+    cursor: text; }
+  button.invert, select.invert, input.invert, textarea.invert, a.button.invert {
+    color: #ffffff;
+    background-color: #555555;
+    border-color: #ffffff; }
+    button.invert:hover, select.invert:hover, input.invert:hover, textarea.invert:hover, a.button.invert:hover {
+      background-color: #222222; }
+
+input[type=checkbox] {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  background-color: #ffffff;
+  outline: 0;
+  border: 1px solid #555555;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none; }
+  input[type=checkbox]:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none; }
+  input[type=checkbox]:checked {
+    text-align: center;
+    line-height: 15px; }
+    input[type=checkbox]:checked:checked:before {
+      content: '\2714'; }
+
+nav {
+  background-color: #555555;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ffffff;
+  margin: 0;
+  padding: 0.5rem; }
+
 body {
   padding: 0;
   margin: 0;
@@ -64,42 +131,6 @@ p {
     content: ' *';
     color: #555555; }
 
-textarea {
-  resize: vertical; }
-
-button, select, input, textarea, a.button {
-  font-family: 'Handlee', cursive;
-  box-sizing: content-box;
-  border: 1px solid #555555;
-  border-radius: 1px;
-  color: #555555;
-  background-color: #ffffff;
-  cursor: pointer;
-  padding: 1px 4px 1px 4px;
-  margin: 0;
-  line-height: 19px; }
-  button:hover, select:hover, input:hover, textarea:hover, a.button:hover {
-    background-color: #cccccc;
-    font-weight: bold;
-    cursor: pointer; }
-  button:active, select:active, input:active, textarea:active, a.button:active {
-    cursor: text; }
-  button.invert, select.invert, input.invert, textarea.invert, a.button.invert {
-    color: #ffffff;
-    background-color: #555555;
-    border-color: #ffffff; }
-    button.invert:hover, select.invert:hover, input.invert:hover, textarea.invert:hover, a.button.invert:hover {
-      background-color: #222222; }
-
-nav {
-  background-color: #555555;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: #ffffff;
-  margin: 0;
-  padding: 0.5rem; }
-
 .order {
   display: flex;
   flex-direction: column; }
@@ -132,34 +163,3 @@ nav {
     width: 33%; }
   .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
     width: 50%; } }
-
-input[type=checkbox] {
-  width: 11px;
-  height: 11px;
-  padding: 0;
-  background-color: #ffffff;
-  outline: 0;
-  border: 1px solid #555555;
-  display: inline-block;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -ms-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none; }
-  input[type=checkbox]:focus {
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    -ms-box-shadow: none;
-    -o-box-shadow: none;
-    box-shadow: none; }
-  input[type=checkbox]:checked {
-    text-align: center;
-    line-height: 15px; }
-    input[type=checkbox]:checked:checked:before {
-      content: '\2714'; }

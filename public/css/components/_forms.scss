@@ -1,0 +1,55 @@
+textarea {
+    resize: vertical;
+}
+
+button, select, input, textarea, a.button {
+    font-family: 'Handlee', cursive;
+    box-sizing:content-box;
+    border: 1px solid $primaryColor;
+    border-radius: 1px;
+    color: $primaryColor;
+    background-color: $baseColor;
+    cursor: pointer;
+    padding: 1px 4px 1px 4px;
+    margin: 0;
+    line-height: 19px;
+    &:hover {
+        background-color: $activeBGColor;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    &:active {
+        cursor: text;
+    }
+    &.invert {
+        color: $baseColor;
+        background-color: $primaryColor;
+        border-color: $baseColor;
+        &:hover {
+            background-color: $invertActiveBGColor;
+        }
+    }
+}
+
+input[type=checkbox] {
+	width: 11px;
+	height: 11px;
+    padding: 0;
+	background-color: $baseColor;
+	outline: 0;
+	border: 1px solid $primaryColor;
+	display: inline-block;
+    @include vendor-prefix('appearance', 'none');
+    @include vendor-prefix('box-shadow', 'none');
+    &:focus {
+        outline: none;
+        @include vendor-prefix('box-shadow', 'none');
+    }
+    &:checked {
+        text-align: center;
+        line-height: 15px;
+        &:checked:before {
+            content: '\2714';
+        }
+    }
+}
