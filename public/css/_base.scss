@@ -74,6 +74,21 @@ p {
 .note {
     border-top: 0.1rem dotted $primaryColor;
     padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    > * {
+        margin-left: 0.2rem !important;
+    }
+    > p.caps {
+        font-variant: small-caps;
+    }
+    > p.caps, > p.newline {
+        margin-right: auto;
+        width: 100%;
+    }
 }
 
 .note:first-child {
@@ -86,6 +101,10 @@ p {
     .order {
         display: flex;
         flex-direction: row;
+    }
+
+    .note > p {
+        width: auto;
     }
 
     .formRow {

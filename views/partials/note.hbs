@@ -1,11 +1,12 @@
 <div class="note">
-    <p>{{title}}</p>
+    <p class="caps">{{title}}</p>
     <div class="rating">
         {{#set_checked 5 importance _id}}
-            <input type="radio" id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" /><label class="imp{{this.index}}" for="{{this.id}}_importance{{this.index}}"></label>
+            <input type="radio" id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" />
+            <label class="imp{{this.index}}" for="{{this.id}}_importance{{this.index}}"></label>
         {{/set_checked}}
     </div>
-    <p>{{description}}</p>
     <a class="button" href="/notes/{{_id}}">Edit</a>
     <a class="button" href="/notes/delete/{{_id}}">Delete</a>
+    <p class="newline">{{description}}</p>
 </div>
