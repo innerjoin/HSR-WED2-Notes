@@ -1,16 +1,44 @@
 var express = require('express');
 var router = express.Router();
 var store = require('../service/noteStore');
-var configController = require('../controllers/configController');
 var noteController = require('../controllers/noteController');
 
 var sortingTemp = '';
 var sortOrder = 1;
 
+function setSessionParameters(session, query){
+    if(query.sorting){
+        if(session.sorting == query.sorting)
+            session.sortOrder = session.sortOrder * -1;
+        else
+            session.sortOrder = 1;
+        session.sorting = query.sorting;
+    }
+    if(query.showFinished){
+        session.showFinished = query.showFinished;
+    }
+    if(query.style){
+        session.style = query.style;
+    }
+
+    if(session.sorting == undefined){
+        session.sorting = 'dueDate';
+        session.sortOrder = 1;
+    }
+
+    if(session.style == undefined){
+        session.style = 'Gray';
+    }
+
+    if(session.showFinished == undefined){
+        session.showFinished = 'true';
+    }
+}
 // list all notes
 router.get('/', function(req, res) {
     console.log("/notes");
-    configController.updateConfigurations(req, res, req.query, noteController.all);
+    setSessionParameters(req.session, req.query);
+    noteController.all(req, res);
 });
 
 // new note
@@ -18,7 +46,7 @@ router.get('/add', function(req, res) {
     console.log("GET /notes/new");
     res.format({
         'text/html': function(){
-            res.render("add");
+            res.render("add" ,{style:req.session.style});
         },
         'application/json': function(){
             res.send({});
@@ -41,7 +69,7 @@ router.get('/:id', function(req, res) {
     store.get(req.params.id, function(err, note) {
         res.format({
             'text/html': function(){
-                res.render("edit", {note:note});
+                res.render("edit", {note:note, style:req.session.style});
             },
             'application/json': function(){
                 res.json(note);
@@ -60,7 +88,5 @@ router.post('/:id', function(req, res) {
     });
 
 });
-
-
 
 module.exports = router;
