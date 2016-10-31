@@ -12,10 +12,10 @@ function hasConfigurationChanges(hasPendingChanges, configuration, query) {
 
 function publicUpdateConfigs(req, res, query, callback) {
     loadConfigurations(req, res, function (req, res, config) {
-        var sorting = !!query.sorting ? query.sorting : 'duedate';
+        var sorting = !!query.sorting ? query.sorting : 'dueDate';
         var order = 1;
         var showFinished = !!query.showFinished ? query.showFinished : 'true';
-        var style = !!query.style ? query.style : 'light';
+        var style = !!query.style ? query.style : 'Red';
         var hasPendingChanges = false;
 
         //changes sort order if actual config is the same as specified in query string
@@ -24,7 +24,7 @@ function publicUpdateConfigs(req, res, query, callback) {
             hasPendingChanges = true;
         }
         if (!!config[1].type && !!query.style) {
-            style = config[1].value == 'light' ? 'dark' : 'light';
+            style = config[1].value == 'Red' ? 'Dark' : 'Red';
             hasPendingChanges = true;
         }
         if (!!config[2].type && !!query.showFinished) {

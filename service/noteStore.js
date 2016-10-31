@@ -42,7 +42,7 @@ function publicGet(id, callback)
 
 function publicAll(sort, sortOrder,show, callback) {
     if(show === 'false') {
-        db.find({state: 'FINISHED'}).sort({[sort]: sortOrder}).exec(function (err, notes) {
+        db.find({$not: {state: 'FINISHED'}}).sort({[sort]: sortOrder}).exec(function (err, notes) {
             callback(err, notes, sort);
         });
     }
