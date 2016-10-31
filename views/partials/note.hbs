@@ -1,9 +1,9 @@
 <div class="note">
     <p>{{title}}</p>
     <div class="rating">
-        {{#loop 5 importance _id}}
+        {{#set_checked 5 importance _id}}
             <input type="radio" id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" /><label class="imp{{this.index}}" for="{{this.id}}_importance{{this.index}}"></label>
-        {{/loop}}
+        {{/set_checked}}
     </div>
     <p>{{description}}</p>
     <a class="button" href="/notes/{{_id}}">Edit</a>

@@ -22,8 +22,8 @@
     <label for="noteImportance">Importance</label>
     <select id="noteImportance" name="importance" required>
         <option disabled selected value> -- select an option -- </option>
-        {{#loop_option 5 note.importance note._id}}
+        {{#set_selected 5 note.importance note._id}}
             <option id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" >{{importanceType}}</option>
-        {{/loop_option}}
+        {{/set_selected}}
     </select>
 </div>
