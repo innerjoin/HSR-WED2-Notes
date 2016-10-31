@@ -8,10 +8,7 @@ var sortOrder = 1;
 
 function setSessionParameters(session, query){
     if(query.sorting){
-        if(session.sorting == query.sorting)
-            session.sortOrder = session.sortOrder * -1;
-        else
-            session.sortOrder = 1;
+        session.sortOrder = session.sorting == query.sorting ? session.sortOrder * -1 : 1;
         session.sorting = query.sorting;
     }
     if(query.showFinished){
@@ -35,8 +32,14 @@ function setSessionParameters(session, query){
     }
 }
 // list all notes
+router.post('/', function(req, res) {
+    console.log("POST /notes");
+    setSessionParameters(req.session, req.body);
+    noteController.all(req, res);
+});
+
 router.get('/', function(req, res) {
-    console.log("/notes");
+    console.log("GET /notes");
     setSessionParameters(req.session, req.query);
     noteController.all(req, res);
 });
@@ -58,7 +61,6 @@ router.get('/add', function(req, res) {
 router.post('/', function(req, res) {
     console.log("POST /notes");
     store.add(req.body.title, req.body.description, req.body.importance,req.body.dueDate,req.body.finished, "unkown", function(err, note) {
-        //res.render("notes", {notes: data});
         res.redirect("/");
     });
 });

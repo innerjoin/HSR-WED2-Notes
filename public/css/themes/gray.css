@@ -155,8 +155,8 @@ p {
   .note > * {
     margin-left: 0.2rem !important; }
   .note > p.caps {
-    font-variant: small-caps;
-    align-self: stretch; }
+    font-size: 1.5em;
+    font-variant: small-caps; }
   .note > p.caps, .note > p.newline {
     margin-right: auto;
     width: 100%; }
@@ -170,7 +170,7 @@ p {
   .order {
     display: flex;
     flex-direction: row; }
-  .note > p {
+  .note > p.caps {
     width: auto; }
   .formRow > * {
     display: inline-block; }
