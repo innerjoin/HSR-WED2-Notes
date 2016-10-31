@@ -41,7 +41,6 @@ function publicGet(id, callback)
 }
 
 function publicAll(sort, sortOrder,show, callback) {
-    console.log(show);
     if(show === 'false') {
         db.find({state: 'FINISHED'}).sort({[sort]: sortOrder}).exec(function (err, notes) {
             callback(err, notes, sort);
