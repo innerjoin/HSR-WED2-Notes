@@ -15,7 +15,7 @@ function publicGetAll(req, res, config){
     store.all(sorting.value, sorting.params.sortOrder, show, function(err, data, sortBy) {
         res.format({
             'text/html': function(){
-                res.render("notes", {notes: data, sortBy:sortBy, showFinished:show});
+                res.render("notes", {notes: data, sortBy:sortBy, showFinished:show, sortOrder: sorting.params.sortOrder});
             },
             'application/json': function(){
                 res.send({});

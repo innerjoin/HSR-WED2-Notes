@@ -2,10 +2,10 @@
     {{#*inline "nav"}}
         <a class="button invert" href="notes/add">New Note</a>
         <span>
-            <form action="/" method="POST">
-                <select class="invert">
-                    <option selected>Red</option>
-                    <option>Dark</option>
+            <form action="/notes" method="get">
+                <select class="invert" name="style">
+                    <option {{#if_eq style 'Red'}}selected{{/if_eq}}>Red</option>
+                    <option {{#if_eq style 'Dark'}}selected{{/if_eq}}>Dark</option>
                     <option>Bad Taste</option>
                 </select>
                 <input class="invert" type="submit" value="Switch Theme" />
@@ -14,23 +14,23 @@
     {{/inline}}
     {{#*inline "content"}}
         <div class="order">
-            <form action='/notes' method='get' class="btn-sort">
+            <form action='/notes' method='get'>
                 <input type="hidden" name="sorting" value="dueDate">
-                <input type="submit" value="By finish date" {{#if_eq sortBy 'dueDate'}} class="activeFilter"{{/if_eq}} >
+                <input type="submit" value="By finish date" {{#if_eq sortBy 'dueDate'}} {{#if_eq sortOrder 1}} class="activeFilter"{{/if_eq}}{{/if_eq}} >
             </form>
-            <form action='/notes' method='get' class="btn-sort">
+            <form action='/notes' method='get'>
                 <input type="hidden" name="sorting" value="createdDate">
-                <input type="submit" value="By created date" {{#if_eq sortBy 'createdDate'}} class="activeFilter"{{/if_eq}}>
+                <input type="submit" value="By created date" {{#if_eq sortBy 'createdDate'}} {{#if_eq sortOrder 1}} class="activeFilter"{{/if_eq}}{{/if_eq}}>
             </form>
-            <form action='/notes' method='get' class="btn-sort">
-                <input type="hidden" name="sorting" value="importance"{{#if_eq sortBy 'importance'}} class="activeFilter"{{/if_eq}}>
-                <input type="submit" value="By importance" >
+            <form action='/notes' method='get'>
+                <input type="hidden" name="sorting" value="importance">
+                <input type="submit" value="By importance" {{#if_eq sortBy 'importance'}}{{#if_eq sortOrder 1}} class="activeFilter"{{/if_eq}}{{/if_eq}}>
             </form>
-            <form action='/notes' method='get' class="btn-sort">
-                <input type="hidden" name="style" value="{{#if_eq style 'Red'}}Dark{{else}}Right{{/if_eq}}">
+            <form action='/notes' method='get'>
+                <input type="hidden" name="style" value="{{#if_eq style 'Red'}}Dark{{else}}Red{{/if_eq}}">
                 <input type="submit" value="switch style">
             </form>
-            <form action='/notes' method='get' class="btn-sort">
+            <form action='/notes' method='get'>
                 <input type="hidden" name="showFinished" value="{{#if_eq showFinished 'true'}}false{{else}}true{{/if_eq}}">
                 <input type="submit" value="Show Finished">
             </form>
