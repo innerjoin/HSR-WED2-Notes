@@ -1,20 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var store = require('../service/noteStore');
+var configController = require('../controllers/configController');
+var noteController = require('../controllers/noteController');
+
+var sortingTemp = '';
+var sortOrder = 1;
 
 // list all notes
 router.get('/', function(req, res) {
     console.log("/notes");
-    store.all(function(err, data) {
-        res.format({
-            'text/html': function(){
-                res.render("notes", {notes: data});
-            },
-            'application/json': function(){
-                res.send({});
-            }
-        });
-    });
+    configController.updateConfigurations(req, res, req.query, noteController.all);
 });
 
 // new note
@@ -25,7 +21,7 @@ router.get('/add', function(req, res) {
             res.render("add");
         },
         'application/json': function(){
-            res.send();
+            res.send({});
         }
     });
 });
@@ -41,6 +37,8 @@ router.post('/', function(req, res) {
 
 // edit note
 router.get('/:id', function(req, res) {
+    console.log("GET /notes/:id");
+    console.log(req.params.id);
     store.get(req.params.id, function(err, note) {
         res.format({
             'text/html': function(){
@@ -61,5 +59,7 @@ router.post('/:id', function(req, res) {
     });
 
 });
+
+
 
 module.exports = router;

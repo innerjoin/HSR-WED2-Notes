@@ -13,4 +13,11 @@ hbs.registerHelper('loop', function(n, importance,_id, block) {
     return temp;
 });
 
+hbs.registerHelper('if_eq', function(a, b, opts) {
+    if (a === b) {
+        return opts.fn(this);
+    }
+    return opts.inverse(this);
+});
+
 module.exports = hbs;
