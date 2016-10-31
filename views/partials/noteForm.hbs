@@ -14,8 +14,12 @@
 </div>
 
 <div class="formRow">
-    <label for="noteImportance">Importance</label>
+    <label for="noteFinished">Finished?</label>
+    <input type="checkbox" id="noteFinished" checked>
+</div>
 
+<div class="formRow">
+    <label for="noteImportance">Importance</label>
     <select id="noteImportance" name="importance" required>
         <option disabled selected value> -- select an option -- </option>
         {{#loop 5 note.importance note._id}}
