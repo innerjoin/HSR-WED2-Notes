@@ -33,7 +33,6 @@ function setSessionParameters(session, query){
 }
 // list all notes
 router.post('/', function(req, res) {
-    console.log("POST /notes");
     setSessionParameters(req.session, req.body);
     noteController.all(req, res);
 });
@@ -58,8 +57,8 @@ router.get('/add', function(req, res) {
 });
 
 // create note
-router.post('/', function(req, res) {
-    console.log("POST /notes");
+router.post('/add', function(req, res) {
+    console.log("POST /notes create");
     store.add(req.body.title, req.body.description, req.body.importance,req.body.dueDate,req.body.finished, "unkown", function(err, note) {
         res.redirect("/");
     });
