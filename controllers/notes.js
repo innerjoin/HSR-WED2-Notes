@@ -3,43 +3,15 @@ var router = express.Router();
 var store = require('../service/noteStore');
 var noteController = require('../controllers/noteController');
 
-var sortingTemp = '';
-var sortOrder = 1;
-
-function setSessionParameters(session, query){
-    if(query.sorting){
-        session.sortOrder = session.sorting == query.sorting ? session.sortOrder * -1 : 1;
-        session.sorting = query.sorting;
-    }
-    if(query.showFinished){
-        session.showFinished = query.showFinished;
-    }
-    if(query.style){
-        session.style = query.style;
-    }
-
-    if(session.sorting == undefined){
-        session.sorting = 'dueDate';
-        session.sortOrder = 1;
-    }
-
-    if(session.style == undefined){
-        session.style = 'Gray';
-    }
-
-    if(session.showFinished == undefined){
-        session.showFinished = 'true';
-    }
-}
 // list all notes
 router.post('/', function(req, res) {
-    setSessionParameters(req.session, req.body);
+    noteController.setSessionParameters(req.session, req.body);
     noteController.all(req, res);
 });
 
 router.get('/', function(req, res) {
     console.log("GET /notes");
-    setSessionParameters(req.session, req.query);
+    noteController.setSessionParameters(req.session, req.body);
     noteController.all(req, res);
 });
 

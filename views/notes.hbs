@@ -2,7 +2,7 @@
     {{#*inline "nav"}}
         <a class="button invert" href="notes/add">New Note</a>
         <span>
-            <form action="/notes" method="get">
+            <form action="/notes" method="POST">
                 <select class="invert" name="style">
                     <option {{#if_eq style 'Red'}}selected{{/if_eq}}>Red</option>
                     <option {{#if_eq style 'Gray'}}selected{{/if_eq}}>Gray</option>

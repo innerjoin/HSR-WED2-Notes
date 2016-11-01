@@ -5,12 +5,12 @@
 
 <div class="formRow">
     <label for="noteDescription">Description</label>
-    <textarea id="noteDescription" name="description" required {{#if_eq blocking 'true'}}disabled{{/if_eq}}>{{note.description}}</textarea>
+    <textarea id="noteDescription" name="description" {{#if_eq blocking 'true'}}disabled{{/if_eq}}>{{note.description}}</textarea>
 </div>
 
 <div class="formRow">
     <label for="noteDueDate">Due Date</label>
-    <input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" required {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
+    <input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
 </div>
 
 <div class="formRow">
