@@ -21,6 +21,10 @@ button, select, input, textarea, a.button {
     &:active {
         cursor: text;
     }
+    &:focus, &:active {
+        outline: none;
+        @include vendor-prefix('box-shadow', 'none');
+    }
     &.invert {
         color: $baseColor;
         background-color: $primaryColor;
@@ -41,7 +45,7 @@ input[type=checkbox] {
 	display: inline-block;
     @include vendor-prefix('appearance', 'none');
     @include vendor-prefix('box-shadow', 'none');
-    &:focus {
+    &:focus, &:active {
         outline: none;
         @include vendor-prefix('box-shadow', 'none');
     }
