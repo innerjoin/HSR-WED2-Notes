@@ -27,8 +27,13 @@ p {
 }
 
 .noNotesFound {
-    position: absolute;
-    top: 10rem;
+    display: flex;
+    > a {
+        text-align: center;
+        padding: 2rem;
+        margin: 0.3rem;
+        flex: 1 1 auto;
+    }
 }
 
 .formRow {
