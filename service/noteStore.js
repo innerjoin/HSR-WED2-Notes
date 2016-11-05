@@ -31,9 +31,16 @@ function publicRemove(id, callback) {
 }
 
 function publicModify(id, title, description, importance, state, dueDate, callback) {
-    db.update({_id: id}, {$set: {"state": state, "title":title, "description":description, "importance":importance, "dueDate":dueDate}}, {}, function (err, doc) {
-        publicGet(id,callback);
-    });
+    if(state != undefined){
+        db.update({_id: id}, {$set: {"state": state, "title":title, "description":description, "importance":importance, "dueDate":dueDate}}, {}, function (err, doc) {
+            publicGet(id,callback);
+        });
+    }
+    else{
+        db.update({_id: id}, {$set: {"title":title, "description":description, "importance":importance, "dueDate":dueDate}}, {}, function (err, doc) {
+            publicGet(id,callback);
+        });
+    }
 }
 
 function publicGet(id, callback)
