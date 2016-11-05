@@ -46,16 +46,20 @@ p {
         width: 100%;
     }
 
-    select:required + label:after,
-    textarea:required + label:after,
-    input:required + label:after {
+    input:disabled, textarea:disabled, select:disabled {
+        opacity: 0.5;
+    }
+
+    select:required:not(:disabled) + label:after,
+    textarea:required:not(:disabled) + label:after,
+    input:required:not(:disabled) + label:after {
         content: ' (*)';
         color: red;
     }
 
-    select:required:valid + label:after,
-    textarea:required:valid + label:after,
-    input:required:valid + label:after { 
+    select:required:valid:not(:disabled) + label:after,
+    textarea:required:valid:not(:disabled) + label:after,
+    input:required:valid:not(:disabled) + label:after { 
         content: ' \2714';
         color: green;
     }

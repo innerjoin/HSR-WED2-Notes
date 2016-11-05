@@ -125,14 +125,16 @@ p {
     line-height: 23px; }
   .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
     width: 100%; }
-  .formRow select:required + label:after,
-  .formRow textarea:required + label:after,
-  .formRow input:required + label:after {
+  .formRow input:disabled, .formRow textarea:disabled, .formRow select:disabled {
+    opacity: 0.5; }
+  .formRow select:required:not(:disabled) + label:after,
+  .formRow textarea:required:not(:disabled) + label:after,
+  .formRow input:required:not(:disabled) + label:after {
     content: ' (*)';
     color: red; }
-  .formRow select:required:valid + label:after,
-  .formRow textarea:required:valid + label:after,
-  .formRow input:required:valid + label:after {
+  .formRow select:required:valid:not(:disabled) + label:after,
+  .formRow textarea:required:valid:not(:disabled) + label:after,
+  .formRow input:required:valid:not(:disabled) + label:after {
     content: ' \2714';
     color: green; }
 
