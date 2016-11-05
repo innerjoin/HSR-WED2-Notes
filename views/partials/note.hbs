@@ -1,14 +1,20 @@
 <div class="note">
-    <p class="caps">{{title}}</p>
-    <div class="rating">
-        {{#set_checked 5 importance _id}}
-            <input type="radio" id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" />
-            <label class="imp{{this.index}}" for="{{this.id}}_importance{{this.index}}"></label>
-        {{/set_checked}}
+    <div>
+        <p class="caps">{{title}}</p>
+        <p>{{description}}</p>
     </div>
-    <a class="button" href="/notes/{{_id}}">Edit</a>
-    <a class="button" href="/notes/delete/{{_id}}">Delete</a>
-    <p>Due: {{dueDate}}</p>
-    <p>State: {{state}}</p>
-    <p class="newline">{{description}}</p>
+    <div>
+        <div class="rating">
+            {{#set_checked 5 importance _id}}
+                <input type="radio" id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" />
+                <label class="imp{{this.index}}" for="{{this.id}}_importance{{this.index}}"></label>
+            {{/set_checked}}
+        </div>
+        <p>Due: {{dueDate}}</p>
+        <p>State: {{state}}</p>
+        <span>
+            <a class="button" href="/notes/{{_id}}">Edit</a>
+            <a class="button" href="/notes/delete/{{_id}}">Delete</a>
+        </span>
+    </div>
 </div>
