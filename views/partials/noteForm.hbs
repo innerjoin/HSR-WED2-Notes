@@ -1,29 +1,29 @@
 <div class="formRow">
-    <label for="noteTitle">Title</label>
     <input type="text" id="noteTitle" name="title" value="{{note.title}}" required {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
+    <label for="noteTitle">Title</label>
 </div>
 
 <div class="formRow">
+    <textarea id="noteDescription" name="description" {{#if_eq blocking 'true'}}disabled{{/if_eq}}>{{note.description}}</textarea>
     <label for="noteDescription">Description</label>
-    <textarea id="noteDescription" name="description" required {{#if_eq blocking 'true'}}disabled{{/if_eq}}>{{note.description}}</textarea>
 </div>
 
 <div class="formRow">
+    <input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
     <label for="noteDueDate">Due Date</label>
-    <input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" required {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
 </div>
 
 <div class="formRow">
-    <label for="noteFinished">Finished?</label>
     <input type="checkbox" id="noteFinished" name="finished" {{#if_eq note.state "FINISHED"}}checked{{/if_eq}} {{#if_eq blocking 'true'}}disabled{{/if_eq}}>
+    <label for="noteFinished">Finished?</label>
 </div>
 
 <div class="formRow">
-    <label for="noteImportance">Importance</label>
     <select id="noteImportance" name="importance" required {{#if_eq blocking 'true'}}disabled{{/if_eq}}>
         <option disabled selected value> -- select an option -- </option>
         {{#set_selected 5 note.importance note._id}}
             <option id="{{this.id}}_importance" name="{{this.id}}_importance" value="{{this.index}}" >{{importanceType}}</option>
         {{/set_selected}}
     </select>
+    <label for="noteImportance">Importance</label>
 </div>

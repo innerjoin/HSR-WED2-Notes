@@ -32,24 +32,32 @@ p {
 }
 
 .formRow {
-    display: block;
-    clear: left;
+    display: flex;
+    flex-direction: column;
+
     margin: 5px;
-    > * {
-        display: block;
-        clear: both;
+
+    label {
+        order: -1;
+        line-height: 23px;
     }
+
     input[type=text], input[type=date], textarea, select {
         width: 100%;
-        &:valid {
-            border: 1px solid green;
-        }
     }
-    > label {
-        &:after {
-            content: ' *';
-            color: $primaryColor;
-        }
+
+    select:required + label:after,
+    textarea:required + label:after,
+    input:required + label:after {
+        content: ' (*)';
+        color: red;
+    }
+
+    select:required:valid + label:after,
+    textarea:required:valid + label:after,
+    input:required:valid + label:after { 
+        content: ' \2714';
+        color: green;
     }
 }
 
@@ -109,12 +117,12 @@ p {
     }
 
     .formRow {
-        > * {
-            display: inline-block;
-        }
+        flex-direction: row;
+
         > label {
             width: 33%;
         }
+
         input[type=text], input[type=date], textarea, select {
             width: 50%;
         }

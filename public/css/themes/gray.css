@@ -117,19 +117,24 @@ p {
   top: 10rem; }
 
 .formRow {
-  display: block;
-  clear: left;
+  display: flex;
+  flex-direction: column;
   margin: 5px; }
-  .formRow > * {
-    display: block;
-    clear: both; }
+  .formRow label {
+    order: -1;
+    line-height: 23px; }
   .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
     width: 100%; }
-    .formRow input[type=text]:valid, .formRow input[type=date]:valid, .formRow textarea:valid, .formRow select:valid {
-      border: 1px solid green; }
-  .formRow > label:after {
-    content: ' *';
-    color: #555555; }
+  .formRow select:required + label:after,
+  .formRow textarea:required + label:after,
+  .formRow input:required + label:after {
+    content: ' (*)';
+    color: red; }
+  .formRow select:required:valid + label:after,
+  .formRow textarea:required:valid + label:after,
+  .formRow input:required:valid + label:after {
+    content: ' \2714';
+    color: green; }
 
 .order {
   display: flex;
@@ -172,9 +177,9 @@ p {
     flex-direction: row; }
   .note > p.caps {
     width: auto; }
-  .formRow > * {
-    display: inline-block; }
-  .formRow > label {
-    width: 33%; }
-  .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
-    width: 50%; } }
+  .formRow {
+    flex-direction: row; }
+    .formRow > label {
+      width: 33%; }
+    .formRow input[type=text], .formRow input[type=date], .formRow textarea, .formRow select {
+      width: 50%; } }
