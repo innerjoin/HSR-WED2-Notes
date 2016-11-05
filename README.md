@@ -50,18 +50,14 @@ Am Aussehen dürfen Anpassungen vorgenommen werden.
 ### Kriterienkatalog
 | **Anforderungen**                       | **Bemerkungen / geforderte Eigenschaften**                                                          | **Erfüllt?** |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------|--------------|
-| Editieren und Erfassen von Notizen      | <ul><li>Alle Felder vorhanden</li><li>Alle Input-Typen richtig gesetzt</li><li>Validation vom Input (Title required)</li><li>Wichtigkeit zwischen 1-5</li></ul>                                                                              |              |
-| Anzeigen von Einträgen                  | Wie in der Vorgabe (Video)                                                                           |              |
-| Sortieren von Notizen                   | <ul><li>Auf und Absteigend</li><li>Bei Seiten-Refresh muss die Sortierung beibehalten werden.</li></ul>                                            |              |
-| Filtern von „abgeschlossenen" Notizen   | Bei Seiten-Refresh muss der Filter beibehalten werden.                                               |              |
-| Wechseln des Styles                     | Der Style auf Master und Detail anwenden. Bei Seiten-Wechsel sollte die Auswahl beibehalten werden.  |              |
+| Editieren und Erfassen von Notizen      | <ul><li>Alle Felder vorhanden</li><li>Alle Input-Typen richtig gesetzt</li><li>Validation vom Input (Title required)</li><li>Wichtigkeit zwischen 1-5</li></ul>                                                                              |      x       |
+| Anzeigen von Einträgen                  | Wie in der Vorgabe (Video)                                                                           |       x      |
+| Sortieren von Notizen                   | <ul><li>Auf und Absteigend</li><li>Bei Seiten-Refresh muss die Sortierung beibehalten werden.</li></ul>                                            |      x       |
+| Filtern von „abgeschlossenen" Notizen   | Bei Seiten-Refresh muss der Filter beibehalten werden.                                               |       x      |
+| Wechseln des Styles                     | Der Style auf Master und Detail anwenden. Bei Seiten-Wechsel sollte die Auswahl beibehalten werden.  |       x      |
 | Fluides Design                          | Die Seite soll auf Smartphone (IPhone 5) und Desktop ordentlich aussehen                             |              |
 | Server Struktur                         | <ul><li>Sinnvolle File Struktur.</li><li>z.B. Kein Datenbankzugriff im Controller</li></ul>                                                              |              |
-| Datenbank angebunden                    | nedb genutzt                                                                                         |              |
-| Keine Daten                             | Ist die Liste der Notizen leer, soll dies auf sinnvolle Weise den Benutzern deutlich gemacht werden. |              |
+| Datenbank angebunden                    | nedb genutzt                                                                                         |       x      |
+| Keine Daten                             | Ist die Liste der Notizen leer, soll dies auf sinnvolle Weise den Benutzern deutlich gemacht werden. |       x      |
 | JS / HTML / CSS Qualität                | Wie in WED1 gelernt.z.B. Kein Copy & Paste Code                                                      |              |
-
-### Einschränkungen
-* kein JavaScript auf dem Client
-* Fluides Design: Hauptansicht ohne CSS-Grid von Bootstrap FlexBox und Media-Queries müssen eingesetzt werden
-
+| Einschränkungen                         | <ul><li>kein JavaScript auf dem Client</li><li>Hauptansicht ohne CSS-Grid von Bootstrap FlexBox und Media-Queries müssen eingesetzt werden</li></ul>                                            |      x       |
