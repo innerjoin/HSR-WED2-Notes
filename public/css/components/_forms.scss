@@ -2,7 +2,7 @@ button, select, input, textarea, a.button {
     @include vendor-prefix('appearance', 'none');
     font-family: 'Handlee', cursive;
     box-sizing:border-box;
-    font-size: 0.8em;
+    font-size: 1.1em;
     border: 1px solid $primaryColor;
     border-radius: 1px;
     color: $primaryColor;
@@ -10,8 +10,8 @@ button, select, input, textarea, a.button {
     cursor: pointer;
     padding: 1px 4px 1px 4px;
     margin: 0;
-    line-height: 1.8em;
-    height: 1.8em;
+    line-height: 2em;
+    height: 2em;
     &:hover {
         background-color: $activeBGColor;
         font-weight: bold;
@@ -31,6 +31,12 @@ button, select, input, textarea, a.button {
         &:hover {
             background-color: $invertActiveBGColor;
         }
+    }
+}
+
+@media screen and (min-width: $desktopMinWidth) {
+    button, select, input, textarea, a.button {
+        font-size: 0.9em;
     }
 }
 
@@ -61,8 +67,8 @@ select::-ms-expand {
 }  
 
 input[type=checkbox] {
-	width: 11px;
-	height: 11px;
+	width: 1.3em;
+	height: 1.3em;
     padding: 0;
 	background-color: $baseColor;
 	outline: 0;
@@ -76,7 +82,7 @@ input[type=checkbox] {
     }
     &:checked {
         text-align: center;
-        line-height: 15px;
+        line-height: 1.8em;
         &:checked:before {
             content: '\2714';
         }
