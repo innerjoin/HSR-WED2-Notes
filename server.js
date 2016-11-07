@@ -7,7 +7,6 @@ var hbs = require('express-hbs');
 var hbsHelpers = require('./views/helpers/helpers');
 
 const port = 3000;
-const hostname = '127.0.0.1';
 
 app.use(session({ secret: 'casduichasidbnuwezrfinasdcvjkadfhsuilfuzihfioda', resave: false, saveUninitialized: true }));
 
@@ -39,6 +38,6 @@ app.use(
 app.use(express.static(__dirname + '/public'));
 app.use(require('./controllers/routes'));
 
-app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
 });
