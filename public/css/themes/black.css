@@ -19,16 +19,19 @@
       width: 18px;
       line-height: 18px;
       text-align: center;
-      font-size: 18px;
+      font-size: 1em;
       font-weight: 900;
       cursor: pointer; }
 
-textarea {
-  resize: vertical; }
-
 button, select, input, textarea, a.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
   font-family: 'Handlee', cursive;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  font-size: 0.8em;
   border: 1px solid #AAAAAA;
   border-radius: 1px;
   color: #AAAAAA;
@@ -36,7 +39,8 @@ button, select, input, textarea, a.button {
   cursor: pointer;
   padding: 1px 4px 1px 4px;
   margin: 0;
-  line-height: 19px; }
+  line-height: 1.8em;
+  height: 1.8em; }
   button:hover, select:hover, input:hover, textarea:hover, a.button:hover {
     background-color: #333333;
     font-weight: bold;
@@ -56,6 +60,19 @@ button, select, input, textarea, a.button {
     border-color: #000000; }
     button.invert:hover, select.invert:hover, input.invert:hover, textarea.invert:hover, a.button.invert:hover {
       background-color: #DDDDDD; }
+
+select {
+  overflow: hidden;
+  padding-right: 1.8em;
+  background-image: linear-gradient(45deg, transparent 50%, #AAAAAA 50%), linear-gradient(135deg, #AAAAAA 50%, transparent 50%);
+  background-position: calc(100% - 10px) 0.6em, calc(100% - 5px) 0.6em, 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat; }
+  select.invert {
+    background-image: linear-gradient(45deg, transparent 50%, #000000 50%), linear-gradient(135deg, #000000 50%, transparent 50%); }
+
+select::-ms-expand {
+  display: none; }
 
 input[type=checkbox] {
   width: 11px;
@@ -87,6 +104,14 @@ input[type=checkbox] {
     line-height: 15px; }
     input[type=checkbox]:checked:checked:before {
       content: '\2714'; }
+
+nav form {
+  display: flex; }
+
+textarea {
+  resize: vertical;
+  overflow-y: auto;
+  min-height: 4em; }
 
 nav {
   background-color: #AAAAAA;
