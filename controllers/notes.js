@@ -1,7 +1,10 @@
+var util = require('util');
 var express = require('express');
 var router = express.Router();
 var store = require('../service/noteStore');
 var noteController = require('../controllers/noteController');
+
+expressValidator = require('express-validator')
 
 // list all notes
 router.post('/', function(req, res) {
@@ -20,7 +23,8 @@ router.get('/add', function(req, res) {
     console.log("GET /notes/new");
     res.format({
         'text/html': function(){
-            res.render("add" ,{style:req.session.style});
+            var date = JSON.stringify(new Date());
+            res.render("add" ,{style:req.session.style, actualDate:date.substring(1, 11)});
         },
         'application/json': function(){
             res.send({});
@@ -31,9 +35,24 @@ router.get('/add', function(req, res) {
 // create note
 router.post('/add', function(req, res) {
     console.log("POST /notes create");
-    store.add(req.body.title, req.body.description, req.body.importance,req.body.dueDate,req.body.finished, "unkown", function(err, note) {
-        res.redirect("/");
-    });
+    var tempNote = {title: req.body.title, desc: req.body.description, dueDate: req.body.dueDate, importance: req.body.importance};
+
+    req.sanitize('title').trim();
+    req.checkBody('title', 'Title cannot be empty').notEmpty().withMessage('Titel is required');
+    req.checkBody("dueDate", "Enter valid due date").isValidDate();
+    req.checkBody("importance", "Enter valid importance").isInt().isInRange(1,5);
+
+    var errors = req.validationErrors();
+    console.log(errors);
+    if (errors) {
+        var date = JSON.stringify(new Date());
+        res.render("add", {style:req.session.style, note: tempNote, errors:errors,actualDate:date.substring(1, 11)});
+    }
+    else {
+        store.add(req.body.title, req.body.description, req.body.importance,req.body.dueDate,req.body.finished, "unkown", function(err, note) {
+            res.redirect("/");
+        });
+    }
 });
 
 // edit note

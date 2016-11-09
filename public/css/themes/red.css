@@ -188,6 +188,12 @@ p {
   margin-top: 5px;
   border-top: 0.1rem solid #f02541; }
 
+.errorDisplay label{
+  padding-right: 10px;
+  color:red;
+  font-size: 18px;
+}
+
 @media screen and (min-width: 25em) {
   .order {
     display: flex;

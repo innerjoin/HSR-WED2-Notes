@@ -119,6 +119,14 @@ p {
     border-top: 0.1rem solid $primaryColor;
 }
 
+.errorDisplay {
+    label{
+        padding-right: 10px;
+        color:red;
+        font-size: 18px;
+    }
+}
+
 @media screen and (min-width: $desktopMinWidth) {
     .order {
         display: flex;
@@ -126,7 +134,7 @@ p {
     }
 
     .note {
-        flex-direction: row; 
+        flex-direction: row;
         > p.caps {
             width: auto;
         }

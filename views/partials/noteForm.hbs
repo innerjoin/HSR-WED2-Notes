@@ -1,3 +1,9 @@
+<div class="errorDisplay">
+    {{#each errors}}
+        <p><label>{{msg}}</label></p>
+    {{/each}}
+</div>
+
 <div class="formRow">
     <input type="text" id="noteTitle" name="title" value="{{note.title}}" required {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
     <label for="noteTitle">Title</label>
@@ -9,7 +15,7 @@
 </div>
 
 <div class="formRow">
-    <input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
+    <input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" min="{{actualDate}}" {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
     <label for="noteDueDate">Due Date</label>
 </div>
 
@@ -27,3 +33,4 @@
     </select>
     <label for="noteImportance">Importance</label>
 </div>
+
