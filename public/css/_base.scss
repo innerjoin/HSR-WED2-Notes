@@ -59,14 +59,14 @@ p {
     textarea:required:not(:disabled) + label:after,
     input:required:not(:disabled) + label:after {
         content: ' (*)';
-        color: red;
+        color: $errorColor;
     }
 
     select:required:valid:not(:disabled) + label:after,
     textarea:required:valid:not(:disabled) + label:after,
     input:required:valid:not(:disabled) + label:after { 
         content: ' \2714';
-        color: green;
+        color: $successColor;
     }
 }
 
@@ -118,6 +118,14 @@ p {
     padding-top: 5px;
     margin-top: 5px;
     border-top: 0.1rem solid $primaryColor;
+}
+
+.errorDisplay {
+    border: 1px solid $errorColor;
+    border-radius: 2px;
+    color: $errorColor;
+    background-color: $errorBGColor;
+    padding: 5px;
 }
 
 @media screen and (min-width: $desktopMinWidth) {
