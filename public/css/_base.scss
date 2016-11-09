@@ -10,7 +10,7 @@ body {
     font-family: 'Handlee', cursive;
     background-color: $baseColor;
     color: $invertedBaseColor;
-    font-size: 0.8em;
+    font-size: 1.1em;
     > * {
         padding: $outline;
     }
@@ -89,6 +89,7 @@ p {
 }
 
 .note {
+    text-align: center;
     border-top: 0.1rem dotted $primaryColor;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -104,7 +105,7 @@ p {
         margin-left: 0.2rem !important;
     }
     p.caps {
-        font-size: 1.5em;
+        font-size: 1.8em;
         font-variant: small-caps;
     }
     p.caps, p.newline {
@@ -119,21 +120,18 @@ p {
     border-top: 0.1rem solid $primaryColor;
 }
 
-.errorDisplay {
-    label{
-        padding-right: 10px;
-        color:red;
-        font-size: 18px;
-    }
-}
-
 @media screen and (min-width: $desktopMinWidth) {
+    body {
+        font-size: 0.9em;
+    }
+
     .order {
         display: flex;
         flex-direction: row;
     }
 
     .note {
+        text-align: left;
         flex-direction: row;
         > p.caps {
             width: auto;
