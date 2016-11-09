@@ -1,8 +1,10 @@
-<div class="errorDisplay">
-    {{#each errors}}
-        <p><label>{{msg}}</label></p>
-    {{/each}}
-</div>
+{{#if errors}}
+    <div class="errorDisplay">
+        {{#each errors}}
+            <p><label>{{msg}}</label></p>
+        {{/each}}
+    </div>
+{{/if}}
 
 <div class="formRow">
     <input type="text" id="noteTitle" name="title" value="{{note.title}}" required {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
