@@ -1,3 +1,5 @@
+var util = require('util');
+expressValidator = require('express-validator');
 var store = require('../service/noteStore');
 
 function publicSetSessionParameters(session, query){
@@ -26,6 +28,14 @@ function publicSetSessionParameters(session, query){
     }
 }
 
+function publicValidateRequest(req){
+    req.sanitize('title').trim();
+    req.checkBody('title', 'Title cannot be empty').notEmpty().withMessage('Titel is required');
+    req.checkBody("dueDate", "Enter a date bigger than today with format YYYY-MM-DD").isValidDate();
+    req.checkBody("importance", "Enter valid importance").isInt().isInRange(0,4);
+    return req.validationErrors();
+}
+
 function publicGetAll(req, res){
     store.all(req.session.sorting, req.session.sortOrder, req.session.showFinished, function(err, data) {
         res.format({
@@ -39,4 +49,4 @@ function publicGetAll(req, res){
     });
 }
 
-module.exports  = {all: publicGetAll, setSessionParameters: publicSetSessionParameters};
+module.exports  = {all: publicGetAll, setSessionParameters: publicSetSessionParameters, validate: publicValidateRequest};

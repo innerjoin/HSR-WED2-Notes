@@ -1,10 +1,7 @@
-var util = require('util');
 var express = require('express');
 var router = express.Router();
 var store = require('../service/noteStore');
 var noteController = require('../controllers/noteController');
-
-expressValidator = require('express-validator')
 
 // list all notes
 router.post('/', function(req, res) {
@@ -36,14 +33,7 @@ router.get('/add', function(req, res) {
 router.post('/add', function(req, res) {
     console.log("POST /notes create");
     var tempNote = {title: req.body.title, desc: req.body.description, dueDate: req.body.dueDate, importance: req.body.importance};
-
-    req.sanitize('title').trim();
-    req.checkBody('title', 'Title cannot be empty').notEmpty().withMessage('Titel is required');
-    req.checkBody("dueDate", "Enter valid due date").isValidDate();
-    req.checkBody("importance", "Enter valid importance").isInt().isInRange(1,5);
-
-    var errors = req.validationErrors();
-    console.log(errors);
+    var errors = noteController.validate(req);
     if (errors) {
         var date = JSON.stringify(new Date());
         res.render("add", {style:req.session.style, note: tempNote, errors:errors,actualDate:date.substring(1, 11)});
@@ -75,9 +65,18 @@ router.post('/:id', function(req, res) {
     console.log("PUT /notes/:id");
     if(req.body.finished != undefined)
         req.body.state = 'FINISHED';
-    store.modify(req.params.id, req.body.title, req.body.description, req.body.importance,req.body.state,req.body.dueDate, function(err, note) {
-        res.redirect("/");
-    });
+    var tempNote = {title: req.body.title, desc: req.body.description, dueDate: req.body.dueDate, importance: req.body.importance};
+
+    var errors = noteController.validate(req);
+    if (errors) {
+        var date = JSON.stringify(new Date());
+        res.render("edit", {style:req.session.style, note: tempNote, errors:errors,actualDate:date.substring(1, 11)});
+    }
+    else {
+        store.modify(req.params.id, req.body.title, req.body.description, req.body.importance,req.body.state,req.body.dueDate, function(err, note) {
+            res.redirect("/");
+        });
+    }
 
 });
 

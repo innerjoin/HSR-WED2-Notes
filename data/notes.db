@@ -1,8 +1,3 @@
 {"title":"Testatkriterien abchecken","description":"* rausnehmen","importance":"4","createdDate":"\"2016-11-01T09:17:12.751Z\"","dueDate":"2016-11-11","orderedBy":"unkown","_id":"7IuUVYbQj1wINnX8","state":"FINISHED"}
-{"title":"  ","description":"","importance":"1","createdDate":"\"2016-11-07T12:25:24.825Z\"","dueDate":"1111-11-11","orderedBy":"unkown","state":"DELETED","_id":"GKA5ofraOUgg8xYw"}
-{"title":"Finaler Test","description":"klekner tex","importance":"2","createdDate":"\"2016-11-07T16:27:52.217Z\"","dueDate":"2016-11-10","orderedBy":"unkown","state":"NEW","_id":"GWEhP6BghSpoiWIZ"}
-{"title":"Testat Prüfen 1","description":"Hier wird das Testat geprüft","importance":"3","createdDate":"\"2016-11-01T09:22:17.082Z\"","dueDate":"1111-11-11","orderedBy":"unkown","state":"NEW","_id":"KO8Tfl1cAyhVuazW"}
-{"title":"","description":"","importance":"4","createdDate":"\"2016-11-07T13:07:10.062Z\"","dueDate":"0111-11-11","orderedBy":"unkown","state":"DELETED","_id":"dmBV49sdleh2i8yi"}
-{"title":"TETST","description":"jjkgjhblkj","importance":"2","createdDate":"\"2016-11-07T16:29:07.960Z\"","dueDate":"2017-07-08","orderedBy":"unkown","state":"NEW","_id":"xiD748hFVS1sBgFi"}
-{"title":"Gusti anrufen","description":"Güstel wegen Gugus anrufen","importance":"3","createdDate":"\"2016-11-01T09:09:00.056Z\"","dueDate":"2016-11-02","orderedBy":"unkown","state":"FINISHED","_id":"yrA2LQS20OF1ItRf"}
-{"title":"   ","description":"","importance":"4","createdDate":"\"2016-11-07T13:06:10.865Z\"","dueDate":"1111-11-11","orderedBy":"unkown","state":"DELETED","_id":"zPNmAcPBxyG9tFHa"}
+{"title":"2.ter TEst","description":"sdfaf","importance":"4","createdDate":"\"2016-11-14T10:14:23.165Z\"","dueDate":"2017-01-01","orderedBy":"unkown","state":"DELETED","_id":"dWT3u0aUngd0STIe"}
+{"title":"EInfacher Test","description":"beschreibender Text","importance":"3","createdDate":"\"2016-11-14T10:17:30.433Z\"","dueDate":"2016-12-22","orderedBy":"unkown","state":"NEW","_id":"h5gtcbim3DG3WU4S"}
