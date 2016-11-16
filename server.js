@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var csrf = require('csurf');
 var bodyParser = require("body-parser");
 var validator = require('express-validator');
 var session = require('express-session');
@@ -11,7 +12,6 @@ var moment = require('moment');
 const port = 3000;
 
 app.use(session({ secret: 'casduichasidbnuwezrfinasdcvjkadfhsuilfuzihfioda', resave: false, saveUninitialized: true }));
-
 app.engine('hbs', hbs.express4({
     partialsDir: __dirname + '/views/partials'
 }));
@@ -20,6 +20,12 @@ app.set('views', __dirname + '/views');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(csrf({ cookie: false }));
+app.use(function(req, res, next) { 
+    res.locals.csrftoken = req.csrfToken();
+    next();
+});
+
 app.use(validator({
     customValidators: {
         isInRange: function(value, start, end){
