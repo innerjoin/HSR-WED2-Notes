@@ -35,8 +35,10 @@ app.use(validator({
             return false;
         },
         isValidDate: function(value){
-            console.log(value);
             var date = moment(value, 'YYYY-MM-DD');
+            if(value == ''){
+                return true;
+            }
             if(date.toDate() >= new Date()){
                 return true;
             }
