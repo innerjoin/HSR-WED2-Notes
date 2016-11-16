@@ -17,7 +17,7 @@
 </div>
 
 <div class="formRow">
-    <input type="date" id="noteDueDate" name="dueDate" value="{{note.dueDate}}" min="{{actualDate}}" {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
+    <input type="date" id="noteDueDate" name="dueDate" placeholder="YYYY-MM-DD" value="{{note.dueDate}}" min="{{actualDate}}" {{#if_eq blocking 'true'}}disabled{{/if_eq}}/>
     <label for="noteDueDate">Due Date</label>
 </div>
 
