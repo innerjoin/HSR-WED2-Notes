@@ -8,6 +8,7 @@
                     <option {{#if_eq style 'Gray'}}selected{{/if_eq}}>Gray</option>
                     <option {{#if_eq style 'Black'}}selected{{/if_eq}}>Black</option>
                 </select>
+                <input type="hidden" name="_csrf" value="{{csrftoken}}" />                
                 <input class="invert" type="submit" value="Switch" />
             </form>
         </span>
